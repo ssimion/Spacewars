@@ -12,22 +12,22 @@ login.loadClient = function() {
 
   // Load up /games/v1
   gapi.client.load('games','v1',function(response) {
-    player.loadLocalPlayer();
+    //player.loadLocalPlayer();
     achManager.loadData();
     leadManager.preloadData();
-    welcome.loadUp();
+    //welcome.loadUp();
     game.init();
     challenge.tryToLoad();
   });
 
   // Load up v1management
   gapi.client.load('gamesManagement','v1management', function(response) {
-    welcome.dataLoaded(welcome.ENUM_MANAGEMENT_API);
+    //welcome.dataLoaded(welcome.ENUM_MANAGEMENT_API);
   });
 
   // Load up /plus/v1
   gapi.client.load('plus','v1', function(response) {
-    welcome.dataLoaded(welcome.ENUM_PLUS_API)
+    //welcome.dataLoaded(welcome.ENUM_PLUS_API)
   });
 
 };
@@ -59,8 +59,8 @@ login.logout = function() {
   friendsTable.clearData();
   leadManager.clearData();
   challenge.clearData();
-  player.clearData();
-  welcome.userSignOut();
+  //player.clearData();
+  //welcome.userSignOut();
   $('#loginDiv').fadeIn();
 };
 
