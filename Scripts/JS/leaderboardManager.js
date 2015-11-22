@@ -10,6 +10,7 @@ leadManager.leaderboards = {};
  */
 leadManager.preloadData = function() {
   var request = gapi.client.games.leaderboards.list();
+  console.log("about to execute request");
   request.execute(function(response) {
     console.log('Leaderboard data', response);
     if (response.kind == 'games#leaderboardListResponse' &&
