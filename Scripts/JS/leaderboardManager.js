@@ -35,13 +35,14 @@ leadManager.getLeaderboardObject = function(leadId)
   return leadManager.leaderboards[leadId];
 };
 
-leadManager.gotScore = function(receivedScore, difficulty, callback)
+//leadManager.gotScore = function(receivedScore, difficulty, callback)
+leadManager.gotScore = function()
 {
   var leaderboardId = CgkIup-kxJUFEAIQAQ;
 
   var request = gapi.client.games.scores.submit(
       {leaderboardId: leaderboardId,
-      score: receivedScore}
+      score: 10}
   );
   request.execute(function(response) {
     console.log('Data from submitting high score is ', response);
@@ -56,6 +57,6 @@ leadManager.gotScore = function(receivedScore, difficulty, callback)
         }
       }
     }
-    callback(newWeeklyHighScore);
+    //callback(newWeeklyHighScore);
   });
 };
