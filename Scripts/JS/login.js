@@ -13,11 +13,11 @@ login.loadClient = function() {
   // Load up /games/v1
   gapi.client.load('games','v1',function(response) {
     //player.loadLocalPlayer();
-    achManager.loadData();
+    //achManager.loadData();
     leadManager.preloadData();
     //welcome.loadUp();
-    game.init();
-    challenge.tryToLoad();
+    //game.init();
+    //challenge.tryToLoad();
   });
 
   // Load up v1management
