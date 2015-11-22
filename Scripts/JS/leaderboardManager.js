@@ -19,6 +19,7 @@ leadManager.preloadData = function() {
       }
     }
     leadManager.preloaded = true;
+	console.log("leadManager.preloaded true");
     //welcome.dataLoaded(welcome.ENUM_LEADERBOARDS);
   });
 };
