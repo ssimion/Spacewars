@@ -16,6 +16,10 @@
 		<script src="./Scripts/JS/game-ui.js"></script>
 		<script src="./Scripts/JS/animatedbackground.js"></script>
 		<script src="./Scripts/JS/Leaderboards.js"></script>
+		<script src="./Scripts/JS/leaderboardManager.js"></script>
+		<script src="./Scripts/JS/leaderboardsTable.js"></script>
+		<script src="./Scripts/JS/leaderboardTable.js"></script>
+		<script src="./Scripts/JS/leaderboardWidget.js"></script>
 		<script src="./Scripts/JS/GoogleAccountFunctions.js"></script>
 		<script src="./Scripts/JS/Achievements.js"></script>
 		<script src="./Scripts/JS/deck.js"></script>
@@ -28,10 +32,43 @@
 	</head>
 	<body>
 		<div id="loginDiv" style="display: none;">Welcome! <a href="javascript:login.showLoginDialog()"><img src="./img/gplus_signin_normal.png"></a></div>
+		<div id="leaderboards" style="display: none;">
+        <table id="leaderboardsTable">
+          <thead>
+          <tr>
+            <th>Icon</th>
+            <th>Name</th>
+            <th>See it?</th>
+          </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+
+        <input type="button" id="leaderboardsBack" value="Go back" onclick="leaderboardsTable.goBack()"/>
+      </div>
+	  
+	  <div id="leaderboard" style="display: none;">
+        <div id="leaderboardTitle"></div>
+        <table id="leaderboardTable">
+          <thead>
+          <tr>
+            <th>Avatar</th>
+            <th>Player</th>
+            <th>Score</th>
+          </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+
+        <input type="button" id="leaderboardBack" value="Go back" onclick="leaderboardTable.goBack()"/>
+      </div>
+	  
 		<canvas id="AnimatedBackground" width="625" height="625">
 		</canvas> 
 		<table id="board">
-			<tr><td><button>A button element</button></td><td><input type="submit" value="A submit button"></td><td><button onclick="DisplayLeaderboards()">Leaderboards</button></td></tr>
+			<tr><td><button>A button element</button></td><td><input type="submit" value="A submit button"></td><td><button onclick="leaderboardsTable.showAllLeaderboards()">Leaderboards</button></td></tr>
 			<tr>
 				<td colspan="3">
 					<div id="EnemySlot1" class="ui-widget-header">
