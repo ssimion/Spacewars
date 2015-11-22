@@ -48,6 +48,6 @@ leaderboardsTable.clearOut = function() {
 
 leaderboardsTable.goBack = function() {
   $('#leaderboards').fadeOut();
-  welcome.loadUp();
+  //welcome.loadUp();
 
 };
