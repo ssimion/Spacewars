@@ -38,7 +38,7 @@ leadManager.getLeaderboardObject = function(leadId)
 //leadManager.gotScore = function(receivedScore, difficulty, callback)
 leadManager.gotScore = function()
 {
-  var leaderboardId = CgkIup-kxJUFEAIQAQ;
+  var leaderboardId = 'CgkIup-kxJUFEAIQAQ';
 
   var request = gapi.client.games.scores.submit(
       {leaderboardId: leaderboardId,
