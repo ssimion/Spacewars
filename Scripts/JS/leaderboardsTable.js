@@ -3,10 +3,13 @@
 var leaderboardsTable = leaderboardsTable || {};
 
 leaderboardsTable.showAllLeaderboards = function() {
+  console.log("inside showAllLeaderboards");
   leaderboardsTable.clearOut();
   if (leadManager.preloaded) {
+  console.log("leadManager.preloaded true");
     $.each(leadManager.leaderboards, function(id, leadObject) {
       var $leaderboardRow = leaderboardsTable.buildLeaderboardsRowFromData(leadObject);
+	  console.log("built leaderboard from data");
       $leaderboardRow.appendTo($('#leaderboardsTable tbody'));
     });
     $('#leaderboards').fadeIn();
