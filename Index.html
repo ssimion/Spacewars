@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Game</title>
+		<link rel="stylesheet" href="./scripts/CSS/jquery-ui.css">
+		<link rel="stylesheet" href="./scripts/CSS/style.css">
+		<script src="./scripts/JS/jquery-1.10.2.js"></script>
+		<script src="./scripts/JS/jquery-ui.js"></script>
+		<script src="./scripts/JS/game-ui.js"></script>
+		<script src="./scripts/JS/animatedbackground.js"></script>
+		<script src="./scripts/JS/Leaderboards.js"></script>
+		<script src="./scripts/JS/GoogleAccountFunctions.js"></script>
+		<script src="./scripts/JS/Achievements.js"></script>
+		<script src="./scripts/JS/deck.js"></script>
+		<script src="./scripts/JS/player.js"></script>
+		<script src="./scripts/JS/game.js"></script>
+		<script src="https://apis.google.com/js/client.js"></script>
+		<script src="./scripts/JS/test.js"></script>
+		<string name="leaderboard_wins">CgkIup-kxJUFEAIQAQ</string>
+	</head>
+	<body>
+		<canvas id="AnimatedBackground" width="625" height="625">
+		</canvas> 
+		<table id="board">
+			<tr><td><button>A button element</button></td><td><input type="submit" value="A submit button"></td><td><button onclick="DisplayLeaderboards()">Leaderboards</button></td></tr>
+			<tr>
+				<td colspan="3">
+					<div id="EnemySlot1" class="ui-widget-header">
+						<p>EnemyCardPlaceholder here</p>
+					</div>
+					<div id="EnemySlot2" class="ui-widget-header">
+						<p>EnemyCardPlaceholder here</p>
+					</div>
+					<div id="EnemySlot3" class="ui-widget-header">
+						<p>EnemyCardPlaceholder here</p>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3">
+					<div id="EnemySlot4" class="ui-widget-header">
+						<p>EnemyCardPlaceholder here</p>
+					</div>
+					<div id="EnemySlot5" class="ui-widget-header">
+						<p>EnemyCardPlaceholder here</p>
+					</div>
+					<div id="EnemySlot6" class="ui-widget-header">
+						<p>EnemyCardPlaceholder here</p>
+					</div>
+				</td>
+			</tr>	
+			<tr><td></td><td></td><td></td><td><button id="EndTurn">EndTurn</button></td></tr>	
+			<tr>
+			<td colspan="3">
+				<div id="Slot1" class="ui-widget-header">
+					<p>Drop here</p>
+				</div>
+				<div id="Slot2" class="ui-widget-header">
+					<p>Drop here</p>
+				</div>
+				<div id="Slot3" class="ui-widget-header">
+					<p>Drop here</p>
+				</div>
+			</td>
+			<tr>
+			<tr>
+			<td colspan="3">
+				<div id="Slot4" class="ui-widget-header">
+					<p>Drop here</p>
+				</div>
+				<div id="Slot5" class="ui-widget-header">
+					<p>Drop here</p>
+				</div>
+				<div id="Slot6" class="ui-widget-header">
+					<p>Drop here</p>
+				</div>
+			</td>
+			<tr>
+		</table>
+		<div id="UnitCard" class="ui-widget-content">
+			<p>Drag me to my target</p>
+		</div>
+		<div id="TrapCard" class="ui-widget-content">
+			<p>Drag me to my target</p>
+		</div>
+	</body>
+</html>

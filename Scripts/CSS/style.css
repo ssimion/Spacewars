@@ -1,0 +1,42 @@
+body {
+	font-family: "Trebuchet MS", "Helvetica", "Arial",  "Verdana", "sans-serif";
+	color:white;
+	font-size: 62.5%;
+}
+
+#TrapCard:hover, #UnitCard:hover {
+	zoom: 125%;
+	-moz-transform: scale(1.5);
+}
+
+#AnimatedBackground{
+	position:absolute;
+	z-index:-1;
+}
+
+#TrapCard, #UnitCard 
+{ 
+	width: 60px; 
+	height: 100px; 
+	padding: 0.5em; 
+	float: left; 
+	margin: 10px 10px 10px 0; 
+}
+#Slot1, #Slot2, #Slot3,  #Slot4, #Slot5, #Slot6, 
+#EnemySlot1, #EnemySlot2, #EnemySlot3,  #EnemySlot4, #EnemySlot5, #EnemySlot6 
+{ 
+	color: #FFFFFF;
+	width: 80px; 
+	height: 100px; 
+	padding: 0.5em; 
+	float: left; 
+	margin: 10px 10px 10px 0; 
+	background:none;
+	border:1px solid #0000FF;
+}
+
+#board
+{
+	position:relative;
+	left: 150px;
+}
