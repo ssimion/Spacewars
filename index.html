@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en">
 	<head>
+		<meta charset="utf-8">
 		<title>Game</title>
-<<<<<<< HEAD
 		<link rel="stylesheet" href="./Scripts/CSS/jquery-ui.css">
 		<link rel="stylesheet" href="./Scripts/CSS/style.css">
 
@@ -28,7 +28,6 @@
 		<script src="https://apis.google.com/js/client.js"></script>
 		<script src="./Scripts/JS/test.js"></script>
 		<script src="./Scripts/JS/login.js"></script>
-
 	</head>
 	<body>
 		<div id="loginDiv" style="display: none;">Welcome! <a href="javascript:login.showLoginDialog()"><img src="./img/gplus_signin_normal.png"></a></div>
@@ -60,37 +59,6 @@
 				</tbody>
 			</table>
 			<input type="button" id="leaderboardBack" value="Go back" onclick="leaderboardTable.goBack()"/>
-		</div>
-		<table id="leaderboardsTable">
-		<thead>
-			<tr>
-				<th>Icon</th>
-				<th>Name</th>
-				<th>See it?</th>
-			</tr>
-		</thead>
-		<tbody>
-		</tbody>
-		</table>
-
-		<input type="button" id="leaderboardsBack" value="Go back" onclick="leaderboardsTable.goBack()"/>
-		</div>
-
-		<div id="leaderboard" style="display: none;">
-		<div id="leaderboardTitle"></div>
-		<table id="leaderboardTable">
-			<thead>
-				<tr>
-					<th>Avatar</th>
-					<th>Player</th>
-					<th>Score</th>
-				</tr>
-			</thead>
-			<tbody>
-			</tbody>
-		</table>
-
-		<input type="button" id="leaderboardBack" value="Go back" onclick="leaderboardTable.goBack()"/>
 		</div>
 
 		<canvas id="AnimatedBackground" width="625" height="625">
