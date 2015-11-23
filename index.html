@@ -5,12 +5,20 @@
 		<title>Game</title>
 		<link rel="stylesheet" href="./Scripts/CSS/jquery-ui.css">
 		<link rel="stylesheet" href="./Scripts/CSS/style.css">
+<<<<<<< HEAD
 
+=======
+		
+>>>>>>> 6ef6f092629496ac834efabc282e836ae5c365e2
 		<meta name="google-signin-clientid" content="177579036602-0961tk54mtdmqoe782u3t3u1gtrp2qc7.apps.googleusercontent.com" />
 		<meta name="google-signin-cookiepolicy" content="single_host_origin" />
 		<meta name="google-signin-callback" content="signinCallback" />
 		<meta name="google-signin-scope" content="https://www.googleapis.com/auth/games https://www.googleapis.com/auth/plus.login" />
+<<<<<<< HEAD
 
+=======
+		
+>>>>>>> 6ef6f092629496ac834efabc282e836ae5c365e2
 		<script src="./Scripts/JS/jquery-1.10.2.js"></script>
 		<script src="./Scripts/JS/jquery-ui.js"></script>
 		<script src="./Scripts/JS/game-ui.js"></script>
@@ -28,10 +36,15 @@
 		<script src="https://apis.google.com/js/client.js"></script>
 		<script src="./Scripts/JS/test.js"></script>
 		<script src="./Scripts/JS/login.js"></script>
+<<<<<<< HEAD
+=======
+		
+>>>>>>> 6ef6f092629496ac834efabc282e836ae5c365e2
 	</head>
 	<body>
 		<div id="loginDiv" style="display: none;">Welcome! <a href="javascript:login.showLoginDialog()"><img src="./img/gplus_signin_normal.png"></a></div>
 		<div id="leaderboards" style="display: none;">
+<<<<<<< HEAD
 		<table id="leaderboardsTable">
 			<thead>
 				<tr>
@@ -61,6 +74,40 @@
 			<input type="button" id="leaderboardBack" value="Go back" onclick="leaderboardTable.goBack()"/>
 		</div>
 
+=======
+        <table id="leaderboardsTable">
+          <thead>
+          <tr>
+            <th>Icon</th>
+            <th>Name</th>
+            <th>See it?</th>
+          </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+
+        <input type="button" id="leaderboardsBack" value="Go back" onclick="leaderboardsTable.goBack()"/>
+      </div>
+	  
+	  <div id="leaderboard" style="display: none;">
+        <div id="leaderboardTitle"></div>
+        <table id="leaderboardTable">
+          <thead>
+          <tr>
+            <th>Avatar</th>
+            <th>Player</th>
+            <th>Score</th>
+          </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+
+        <input type="button" id="leaderboardBack" value="Go back" onclick="leaderboardTable.goBack()"/>
+      </div>
+	  
+>>>>>>> 6ef6f092629496ac834efabc282e836ae5c365e2
 		<canvas id="AnimatedBackground" width="625" height="625">
 		</canvas> 
 		<table id="board">
@@ -125,6 +172,7 @@
 		<div id="TrapCard" class="ui-widget-content">
 			<p>Drag me to my target</p>
 		</div>
+<<<<<<< HEAD
 		<!-- JavaScript at the bottom for fast page loading -->
 		<script>
 			// This call is specified by the google-signin-callback in our meta tag
@@ -132,5 +180,16 @@
 			  login.handleAuthResult(auth)
 			}
 		</script>
+=======
+		
+		<!-- JavaScript at the bottom for fast page loading -->
+		  <script>
+
+		   // This call is specified by the google-signin-callback in our meta tag
+		   var signinCallback = function(auth) {
+			  login.handleAuthResult(auth)
+		   }
+		  </script>
+>>>>>>> 6ef6f092629496ac834efabc282e836ae5c365e2
 	</body>
 </html>
