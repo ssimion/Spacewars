@@ -1,64 +1,7 @@
 body {
-	font-family: "Helvetica", "Arial",  "Verdana";
+	font-family: "Trebuchet MS", "Helvetica", "Arial",  "Verdana", "sans-serif";
 	color:white;
 	font-size: 62.5%;
-}
-
-body, button, input
-{
-	color: #333;
-}
-
-button, input
-{
-	font-size: 1em;
-}
-
-#leaderboards, #leaderboard
-{
-	color:black;
-	opacity: 0.977777777777777;
-	position:absolute;
-	border-radius: 5px;
-	top: 150px;
-	left: 150px;
-	background-color: #FFFFFF;
-	z-index:1;
-}
-
-#leaderboardTable table { border-collapse: collapse; text-align: right; }
-#leaderboardsTable table { border-collapse: collapse; text-align: right; }
-
-#leaderboardTable th {padding: 10px; background-color: #0000ee; color: #fcfcfc; font-size: 1.1em; border-left: 1px #fcfcfc solid;}
-#leaderboardsTable th {padding: 10px; background-color: #0000ee; color: #fcfcfc; font-size: 1.1em; border-left: 1px #fcfcfc solid;}
-
-#leaderboardTable tr { border-bottom: 2px #00008b solid; }
-#leaderboardsTable tr { border-bottom: 2px #00008b solid; }
-#leaderboardTable td { vertical-align: top; padding: 10px; }
-#leaderboardsTable td { vertical-align: top; padding: 10px; }
-
-
-.medIcon
-{
-	width: 75px;
-	height: 75px;
-}
-
-.smallIcon
-{
-	width: 65px;
-	height: 65px;
-	padding: 5px;
-}
-
-.unlockWidget
-{
-	position: absolute;
-	top: 250px;
-	background: #B9B0FA;
-	width: 30em;
-	border: 5px solid darkblue;
-	border-radius: 10px;
 }
 
 #TrapCard:hover, #UnitCard:hover {
