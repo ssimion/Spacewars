@@ -1,15 +1,15 @@
 function OneWinAchievement() {
-	POST https://www.googleapis.com/games/v1/achievements/CgkIup-kxJUFEAIQAg/unlock
+    window.location.href = "https://www.googleapis.com/games/v1/achievements/CgkIup-kxJUFEAIQAg/unlock";
 }
 function TwentyFiveWinsAchievement() {
-	POST https://www.googleapis.com/games/v1/achievements/CgkIup-kxJUFEAIQAw/unlock
+    window.location.href = "https://www.googleapis.com/games/v1/achievements/CgkIup-kxJUFEAIQAw/unlock";
 }
 function HundredWinsAchievement() {
-	POST https://www.googleapis.com/games/v1/achievements/CgkIup-kxJUFEAIQBA/unlock
+	window.location.href = "https://www.googleapis.com/games/v1/achievements/CgkIup-kxJUFEAIQAg/unlock";
 }
-function WinBackToBackGamesAchievement() {
-	POST https://www.googleapis.com/games/v1/achievements/CgkIup-kxJUFEAIQBQ/unlock
+function WinBackToBackGamesAchievement() {  
+	window.location.href = "https://www.googleapis.com/games/v1/achievements/CgkIup-kxJUFEAIQAg/unlock";
 }
 function PlayTheFirstGameEverAchievement() {
-	POST https://www.googleapis.com/games/v1/achievements/CgkIup-kxJUFEAIQBg/unlock
+	window.location.href = "https://www.googleapis.com/games/v1/achievements/CgkIup-kxJUFEAIQAg/unlock";
 }
