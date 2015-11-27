@@ -13,7 +13,7 @@ leaderboardTable.goBackTo = leaderboardTable.BACK_TO_ALL_LEADERBOARDS
 	$('#leaderboardTable tbody').html('');
 
 	var request = gapi.client.games.scores.list({
-			collection : 'SOCIAL',
+			collection : 'PUBLIC'
 			leaderboardId : leaderboardId,
 			timeSpan : 'WEEKLY'
 		});
