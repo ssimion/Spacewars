@@ -1,7 +1,15 @@
-body {
+body
+{
 	font-family: "Helvetica", "Arial",  "Verdana";
 	color:white;
 	font-size: 62.5%;
+	margin:0;
+	padding:0;
+}
+
+canvas
+{
+	margin: 0 auto;
 }
 
 body, button, input
@@ -95,5 +103,4 @@ button, input
 #board
 {
 	position:relative;
-	left: 150px;
 }

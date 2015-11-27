@@ -1,7 +1,6 @@
 /** Test Every Class Method of the Player Class
  */
-testPlayerClass = function()
-{
+testPlayerClass = function () {
 	var testPassed = 0;
 	var TestPlayer = new Player("TestPlayer");
 	console.log(TestPlayer.GetName() !== "TestPlayer" ? "%c GetName() isn't working properly" : "%c GetName() is working properly", TestPlayer.GetName() !== "TestPlayer" ? "color:red" : "color:green");
@@ -24,8 +23,11 @@ testPlayerClass = function()
 /** Test Every Class Method of the Player Class
  * TODO : Implement tests for the deck class
  */
-testDeckClass = function (){}
-testGameClass = function(){}
+testDeckClass = function () {
+	var TestDeck = new Deck();
+}
+IsShuffled = function () {}
+testGameClass = function () {}
 /** Test Every Class Method of the Player Class
  * TODO : Implement tests for the game class
  */
