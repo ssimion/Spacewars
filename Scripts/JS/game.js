@@ -18,3 +18,13 @@ Game.prototype.NextTurn = function () {}
 Game.prototype.GetActivePlayer = function () {
 	return this.activePlayer;
 }
+
+Game.prototype.Update(){
+	if (userMatchStatus == "USER_AWAITING_TURN" && matchDataReceived){
+		getMatchData(); 
+	}
+	
+	requestAnimationFrame(Update);
+}
+
+Update();

@@ -31,6 +31,9 @@
 		<script src="./Scripts/JS/login.js"></script>
 		<script src="./Scripts/JS/AchievementsPopup.js"></script>
 		<script src="./Scripts/JS/AchievementsManager.js"></script>
+		<script src="./Scripts/JS/multiplayerInterfaceFunctions.js"></script>
+		<script src="./Scripts/JS/multiplayerGlobals.js"></script>
+		<script src="./Scripts/JS/multiplayerFunctions.js"></script>
 	</head>
 	<body>
 		<div id="loginDiv" style="display: none;">Welcome! <a href="javascript:login.showLoginDialog()"><img src="./img/gplus_signin_normal.png"></a></div>
@@ -67,7 +70,21 @@
 		<canvas id="AnimatedBackground" >
 		</canvas> 
 		<table id="board">
-			<tr><td><button>A button element</button></td><td><input type="submit" value="A submit button"></td><td><button onclick="leaderboardsTable.showAllLeaderboards()">Leaderboards</button></td></tr>
+			<tr>
+				<td><button>A button element</button></td>
+				<td><input type="submit" value="A submit button"></td>
+				<td><button onclick="leaderboardsTable.showAllLeaderboards()">Leaderboards</button></td>
+			</tr>
+			<tr>
+				<td><button>Create test</button></td>
+				<td><input type="button" value="Create Match"></td>
+				<td><button onclick="onCreateMatchClicked()">Create Match</button></td>
+			</tr>
+			<tr>
+				<td><button>Join test</button></td>
+				<td><input type="button" value="Join Match"></td>
+				<td><button onclick="onJoinMatchClicked()">Join Match</button></td>
+			</tr>
 			<tr>
 				<td colspan="3">
 					<div id="EnemySlot1" class="ui-widget-header">
