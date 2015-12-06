@@ -12,12 +12,18 @@ login.loadClient = function () {
 
 	// Load up /games/v1
 	gapi.client.load('games', 'v1', function (response) {
-		//player.loadLocalPlayer();
-		//achManager.loadData();
 		leadManager.preloadData();
-		//welcome.loadUp();
-		//game.init();
-		//challenge.tryToLoad();
+		
+		var request = gapi.client.plus.people.list(
+		{
+			"collection": "visible",
+			"userId": "me"
+		});
+		
+		request.execute(function(response)
+		{
+			usersFriends=response.items
+		});
 	});
 
 	// Load up v1management
