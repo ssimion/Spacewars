@@ -22,7 +22,7 @@ login.loadClient = function () {
 		
 		request.execute(function(response)
 		{
-			usersFriends=response.items
+			usersFriends = response.items
 		});
 	});
 
