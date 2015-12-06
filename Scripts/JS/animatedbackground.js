@@ -11,6 +11,7 @@ $(function () {
 	var g_currentHeight = g_gameHeight;
 	g_background.width = g_gameWidth;
 	g_background.height = g_gameHeight;
+	resize();
 	function resize(){
 		var ratio = g_gameHeight /g_gameWidth ;
 		g_currentWidth =  g_gameWidth;
@@ -32,14 +33,15 @@ $(function () {
 	// Animate Stars and anything that needs refresh.
 	setInterval(function () {
 		DrawBackground();
-		if (!g_NeedsRefresh) {
-			DrawStars(g_backgroundContext, 50);
-			g_NeedsRefresh = true;
-		} else {
-			DrawBackground();
-			DrawStars(g_backgroundContext, 50);
-			g_NeedsRefresh = false;
-		}
+	/*Slowing Brother Down, Maybe consider using clear rect :(
+/* 	if (!g_NeedsRefresh) {
+		DrawStars(g_backgroundContext, 1000);
+		g_NeedsRefresh = true;
+	} else {
+		DrawBackground();
+		DrawStars(g_backgroundContext, 1000);
+		g_NeedsRefresh = false;
+	} */
 	},
 		1500);
 
