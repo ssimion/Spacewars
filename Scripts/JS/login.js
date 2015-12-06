@@ -13,7 +13,15 @@ login.loadClient = function () {
 	// Load up /games/v1
 	gapi.client.load('games', 'v1', function (response) {
 		leadManager.preloadData();
-		
+	});
+
+	// Load up v1management
+	gapi.client.load('gamesManagement', 'v1management', function (response) {
+	});
+
+	// Load up /plus/v1
+	gapi.client.load('plus', 'v1', function (response) {
+		console.log(response);
 		var request = gapi.client.plus.people.list(
 		{
 			"collection": "visible",
@@ -24,16 +32,6 @@ login.loadClient = function () {
 		{
 			usersFriends = response.items
 		});
-	});
-
-	// Load up v1management
-	gapi.client.load('gamesManagement', 'v1management', function (response) {
-		//welcome.dataLoaded(welcome.ENUM_MANAGEMENT_API);
-	});
-
-	// Load up /plus/v1
-	gapi.client.load('plus', 'v1', function (response) {
-		//welcome.dataLoaded(welcome.ENUM_PLUS_API)
 	});
 
 };
