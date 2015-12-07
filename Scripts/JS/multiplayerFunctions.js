@@ -2,7 +2,7 @@
  */
 
  var listGamesInvitedTo = new Array();
- var matchDataReceived = false;
+ var matchDataReceived = true;
  var currentPlayer = "";
  var opposingPlayer = "";
  var opposingPlayerID = "";
