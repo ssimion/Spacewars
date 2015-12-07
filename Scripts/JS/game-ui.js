@@ -1,7 +1,9 @@
+"use strict";
+
 $(document).ready(function(){  
 	var g_maxNumberOfCardsInHand = 7;
 	var g_numberOfSlots = 6;
-	for (i =0; i < 7;++i){
+	for (var i = 0 ; i < 7; ++i ){
 		DrawCard(i);
 	}
 	InitSlots();

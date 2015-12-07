@@ -1,3 +1,5 @@
+"use strict";
+
 /** Base card class that UnitCard and PowerUpCard inherit from 
  */
 var Card = function()

@@ -1,3 +1,5 @@
+"use strict";
+
 /** Inits the Player Class
  * @param {string} playerName: name of the Player
  */

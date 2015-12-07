@@ -1,3 +1,5 @@
+"use strict";
+
 /** Send an achievement for the first win
  */
 function OneWinAchievement() {

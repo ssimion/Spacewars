@@ -1,3 +1,4 @@
+"use strict";
 
 function onCreateMatchClicked(){
 	opposingPlayerID = usersFriends[5].id;

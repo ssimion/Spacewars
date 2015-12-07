@@ -1,3 +1,5 @@
+"use strict";
+
 /** Contains all the functions needed for multiplayer
  */
 

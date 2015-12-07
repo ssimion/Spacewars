@@ -1,3 +1,5 @@
+"use strict";
+
 /** Global Variables.
  */
 var userMatchStatus = "";
@@ -40,6 +42,6 @@ function Update(){
 	requestAnimationFrame(Update);
 }
 
-currentGame = new Game();
+var currentGame = new Game();
 console.log(currentGame);
 Update();

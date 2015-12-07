@@ -1,6 +1,8 @@
+"use strict";
+
 /** Test Every Class Method of the Player Class
  */
-TestPlayerClass = function () {
+var TestPlayerClass = function () {
 	var TestPlayer = new Player("TestPlayer");
 	console.log(TestPlayer.GetName() !== "TestPlayer" ? "%c GetName() isn't working properly" : "%c GetName() is working properly", TestPlayer.GetName() !== "TestPlayer" ? "color:red" : "color:green");
 	TestStatement(TestPlayer.GetHealth() !== 100, "GetHealth()");
@@ -21,11 +23,11 @@ TestPlayerClass = function () {
 /** Test Every Class Method of the Player Class
  * @TODO : Implement tests for the deck class
  */
-TestDeckClass = function () {
+var TestDeckClass = function () {
 	var TestDeck = new Deck();
 }
-IsShuffled = function (array1,array2) {}
-TestGameClass = function () {
+var IsShuffled = function (array1,array2) {}
+var TestGameClass = function () {
 	var TestGame = new Game();
 	TestStatement(TestGame.GetCurrentTurn()  !== 0, "GetCurrentTurn()");
 	TestGame.NextTurn()
@@ -35,7 +37,7 @@ TestGameClass = function () {
 
 /** Test Every Class Method of the Card Class
  */
-TestCardClass = function () {
+var TestCardClass = function () {
 	var TestUnitCard = new UnitCard();
 	TestStatement(TestUnitCard.toString() !== '[UnitCard "' + TestUnitCard.health + '"]', "toString");
 	TestStatement(TestUnitCard.GetHealth() !== 0, "GetHealth()");
@@ -45,7 +47,7 @@ TestCardClass = function () {
 /** Test if a specific statement is true
  * @return {boolean} statement : The statement to check
  */
-TestStatement = function(statement, functionName)
+var TestStatement = function(statement, functionName)
 {
 	console.log(statement ? "%c "+ functionName +" isn't working properly" : "%c "+ functionName +" is working properly", statement ? "color:red" : "color:green");
 	return statement;
