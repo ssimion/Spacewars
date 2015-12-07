@@ -25,14 +25,20 @@ TestDeckClass = function () {
 	var TestDeck = new Deck();
 }
 IsShuffled = function (array1,array2) {}
-TestGameClass = function () {}
+TestGameClass = function () {
+	var TestGame = new Game();
+	TestStatement(TestGame.GetCurrentTurn()  !== 0, "GetCurrentTurn()");
+	TestGame.NextTurn()
+	TestStatement(TestGame.GetCurrentTurn()  !== 1, "NextTurn()");
+	console.log(" All tests for the Game class have passed ! :)");
+}
 
 /** Test Every Class Method of the Card Class
  */
 TestCardClass = function () {
 	var TestUnitCard = new UnitCard();
-	TestStatement(TestUnitCard.toString() != '[UnitCard "' + TestUnitCard.health + '"]', "toString");
-	TestStatement(TestUnitCard.GetHealth() != 0, "GetHealth()");
+	TestStatement(TestUnitCard.toString() !== '[UnitCard "' + TestUnitCard.health + '"]', "toString");
+	TestStatement(TestUnitCard.GetHealth() !== 0, "GetHealth()");
 	console.log(" All tests for the Unit class have passed ! :)");
 }
 

@@ -87,6 +87,8 @@ function getMatchData() {
 }
 
 function finishTurn(dataToSend) {
+	// Keep Track of the game Advancement.
+	currentGame.NextTurn();
 	userMatchStatus = "working";
 	var httpRequest = gapi.client.games.turnBasedMatches.takeTurn(
 	{ 
