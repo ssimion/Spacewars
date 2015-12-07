@@ -7,7 +7,8 @@ function onCreateMatchClicked(){
 
 function onJoinMatchClicked(){
 	listActiveMatches();
-	joinTurnBasedMatch(listGamesInvitedTo[0].matchId);
+	console.log(listGamesInvitedTo);
+	joinTurnBasedMatch(listGamesInvitedTo.items[0].matchId);
 }
 
 function onEndTurnClicked(){
