@@ -6,6 +6,7 @@ function onCreateMatchClicked(){
 }	
 
 function onJoinMatchClicked(){
+	listActiveMatches();
 	joinTurnBasedMatch(listGamesInvitedTo[0].matchId);
 }
 
