@@ -94,7 +94,7 @@ function finishTurn(dataToSend) {
 		"matchVersion": matchVersion,
 	});
 		
-	request.execute(function (takeTurnResponse) {
+	httpRequest.execute(function (takeTurnResponse) {
 		console.log("a turn was taken");
 		userMatchStatus = "USER_AWAITING_TURN";
 		console.log(takeTurnResponse);
