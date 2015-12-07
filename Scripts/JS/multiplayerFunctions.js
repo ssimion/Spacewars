@@ -72,7 +72,6 @@ function getMatchData() {
 			userMatchStatus = "USER_TURN";
 			console.log("User took a turn");
 			matchVersion = matchDataResponse.matchVersion;
-			multiplayerPlaceCounter(atob(matchDataResponse.data.data)); // what is this
 		}
 		matchDataReceived = true;
 	});

@@ -19,7 +19,7 @@ Game.prototype.GetActivePlayer = function () {
 	return this.activePlayer;
 }
 
-Game.prototype.Update(){
+Game.prototype.Update = function(){
 	if (userMatchStatus == "USER_AWAITING_TURN" && matchDataReceived){
 		getMatchData(); 
 	}
