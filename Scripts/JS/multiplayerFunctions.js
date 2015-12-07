@@ -29,7 +29,6 @@ function listActiveMatches() {
 	var httpRequest = gapi.client.games.turnBasedMatches.list();
 	
 	httpRequest.execute(function (matchListResponse) {
-		listGamesInvitedTo = new Array();
 		var gamesCounter = 0;
 		for (var i = 0; i < matchListResponse.items.length; i++){
 			if (matchListResponse.items[i].userMatchStatus == "USER_INVITED"){
