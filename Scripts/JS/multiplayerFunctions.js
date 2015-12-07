@@ -1,6 +1,10 @@
 /** Contains all the functions needed for multiplayer
  */
 
+ var listGamesInvitedTo = new Array();
+
+ 
+ 
  /** Function responsible for creation of the game on the server
   * @param {string} httpRequest : request that will be sent 
   * to the server by calling its execute function
