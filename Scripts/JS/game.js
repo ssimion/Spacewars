@@ -1,6 +1,9 @@
 /** Inits the Game Class
  * TODO: The names should be taken from the google accounts.
  */
+ 
+ var userMatchStatus = "";
+ 
 function Game() {
 	this.Player1 = new Player("Stan");
 	this.Player2 = new Player("Stef");
