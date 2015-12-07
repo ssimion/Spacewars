@@ -2,7 +2,13 @@
  */
 
  var listGamesInvitedTo = new Array();
-
+ var matchDataReceived = false;
+ var currentPlayer = "";
+ var opposingPlayer = "";
+ var opposingPlayerID = "";
+ var matchVersion = 0;
+ var matchID = 0;
+ var usersFriends = new Array();
  
  
  /** Function responsible for creation of the game on the server
