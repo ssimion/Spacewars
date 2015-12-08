@@ -5,22 +5,24 @@
 var Card = function()
 {
 	this.positionOnBoard = 0;
-	this.nameOfCard = '';
+	// All the Cards cost 1
+	this.costOfCard = 1;
+	this.nameOfCard = "";
+	this.descriptionOfCard = "";
 }
-/** Unit card class
+
+/** Returns the card description
  */
-var UnitCard = function() {};
-UnitCard.prototype = new Card();
-UnitCard.prototype.health = 0;
-/** Returns the health of the unit card
- */
-UnitCard.prototype.GetHealth = function()
-{
-	return this.health;
+Card.prototype.GetCardDescription = function(){
+	return this.descriptionOfCard;
 }
-/**
- * Override the to String Function
+/** Return the card cost.
  */
-UnitCard.prototype.toString = function(){ 
-	return '[UnitCard "' + this.health + '"]';
+Card.prototype.GetCardCost = function(){
+	return this.costOfCard;
+}
+/** Return the card name.
+ */
+Card.prototype.GetNameOfCard = function(){
+	return this.nameOfCard;
 }

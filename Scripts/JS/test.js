@@ -21,12 +21,30 @@ var TestPlayerClass = function () {
 	console.log(" All tests for the player class have passed ! :)");
 }
 /** Test Every Class Method of the Player Class
- * @TODO : Implement tests for the deck class
  */
 var TestDeckClass = function () {
 	var TestDeck = new Deck();
+	var array1 = TestDeck.GetCardList();
+	TestStatement(!array1,"GetCardList()");
+	TestDeck.Shuffle();
+	var array2 = TestDeck.GetCardList();
+	TestStatement(!IsShuffled(array1,array2),"Shuffle()");
+	console.log(" All tests for the Deck class have passed ! :)");
 }
-var IsShuffled = function (array1,array2) {}
+/** Test if two decks are different (They should be the same size)
+ * @param array1 : first array
+ * @param array2 : second array
+ * @return {boolean}: false if array is shuffled
+ */
+var IsShuffled = function (array1,array2) {
+	// @failsafe Return the shortest length to prevent overflow anyways.
+	var length = array1.length < array2.length ? array1.length : array2.length;  
+	for(var i = 0 ;i < length; ++i) {
+		if(array1[i] !== array2[i])
+			return false;
+	}
+	return true;
+}
 var TestGameClass = function () {
 	var TestGame = new Game();
 	TestStatement(TestGame.GetCurrentTurn()  !== 0, "GetCurrentTurn()");
@@ -41,7 +59,19 @@ var TestCardClass = function () {
 	var TestUnitCard = new UnitCard();
 	TestStatement(TestUnitCard.toString() !== '[UnitCard "' + TestUnitCard.health + '"]', "toString");
 	TestStatement(TestUnitCard.GetHealth() !== 0, "GetHealth()");
-	console.log(" All tests for the Unit class have passed ! :)");
+	TestStatement(TestUnitCard.GetAttack() !== 1, "GetAttack()");
+	TestStatement(TestUnitCard.GetNameOfCard() !== "Spaceship", "GetNameOfCard()");
+	TestStatement(TestUnitCard.GetCardCost() !== 1, "GetCardCost()");
+	TestStatement(TestUnitCard.GetCardDescription() !== "A little Spaceship", "GetCardDescription()");
+	console.log(" All tests for the UnitCard class have passed ! :)");
+	var TestTrapCard = new TrapCard();
+	TestStatement(TestTrapCard.toString() !== '[TrapCard "' + TestTrapCard.health + '"]', "toString");
+	TestStatement(TestTrapCard.GetType() !== "damage", "GetType()");
+	TestStatement(TestTrapCard.GetDamage() !== 5, "GetDamage()");
+	TestStatement(TestTrapCard.GetCardCost() !== 1, "GetCardCost()");
+	TestStatement(TestTrapCard.GetCardDescription() !== "", "GetCardDescription()");
+	TestStatement(TestTrapCard.GetNameOfCard() !== "", "GetNameOfCard()");
+	console.log(" All tests for the TrapCard class have passed ! :)");
 }
 
 /** Test if a specific statement is true
@@ -53,7 +83,6 @@ var TestStatement = function(statement, functionName)
 	return statement;
 }
 /** Test Every Class Method of the Player Class
- * @TODO : Implement tests for the game class
  */
 TestPlayerClass();
 TestDeckClass();
