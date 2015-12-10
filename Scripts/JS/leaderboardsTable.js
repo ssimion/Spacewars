@@ -1,7 +1,12 @@
 "use strict";
-
+/** Inits the leadManager Class
+ * @class leaderboardsTable
+ */
 var leaderboardsTable = leaderboardsTable || {};
-
+/**
+ * @memberOf leaderboardsTable
+ * @public 
+ */
 leaderboardsTable.showAllLeaderboards = function () {
 	console.log("inside showAllLeaderboards");
 	leaderboardsTable.clearOut();
@@ -16,7 +21,10 @@ leaderboardsTable.showAllLeaderboards = function () {
 	}
 	$('#pageHeader').text('Leaderboards');
 };
-
+/**
+ * @memberOf leaderboardsTable
+ * @public 
+ */
 leaderboardsTable.buildLeaderboardsRowFromData = function (leadObj) {
 	var $tableRow = $('<tr></tr>');
 	var leaderboardIcon = (leadObj.iconUrl) ? leadObj.iconUrl : 'img/genericLeaderboard.png';
@@ -34,17 +42,26 @@ leaderboardsTable.buildLeaderboardsRowFromData = function (leadObj) {
 
 	return $tableRow;
 };
-
+/**
+ * @memberOf leaderboardsTable
+ * @public 
+ */
 leaderboardsTable.selectLeaderboard = function (leaderboardId) {
 	$('#leaderboards').hide();
 	leaderboardTable.showLeaderboard(leaderboardId, leaderboardTable.BACK_TO_ALL_LEADERBOARDS);
 
 };
-
+/**
+ * @memberOf leaderboardsTable
+ * @public 
+ */
 leaderboardsTable.clearOut = function () {
 	$('#leaderboardsTable tbody').html('');
 };
-
+/**
+ * @memberOf leaderboardsTable
+ * @public 
+ */
 leaderboardsTable.goBack = function () {
 	$('#leaderboards').fadeOut();
 	//welcome.loadUp();

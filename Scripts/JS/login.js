@@ -1,11 +1,15 @@
 "use strict";
-
+/** Inits the login Class
+ * @class login
+ */
 var login = login || {};
 
 /**
  * This function allows us to load up the game service via the discovery doc
  * and makes calls directly through the client library instead of needing
  * to specify the REST endpoints.
+ * @memberOf login
+ * @public
  */
 login.loadClient = function () {
 
@@ -34,7 +38,10 @@ login.loadClient = function () {
 	});
 
 };
-
+/**
+ * @memberOf login
+ * @public
+ */
 login.handleAuthResult = function (auth) {
 	console.log('We are in handle auth result', auth);
 	if (auth && auth.error == null) {
@@ -50,12 +57,18 @@ login.handleAuthResult = function (auth) {
 		$('#loginDiv').fadeIn();
 	}
 };
-
+/**
+ * @memberOf login
+ * @public
+ */
 login.showLoginDialog = function () {
 	console.log('Trying not-so-silent auth');
 	gapi.auth.signIn();
 };
-
+/**
+ * @memberOf login
+ * @public
+ */
 login.logout = function () {
 	gapi.auth.signOut();
 	achManager.clearData();

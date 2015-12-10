@@ -1,12 +1,17 @@
 "use strict";
 
+/** Inits the leadManager Class
+ * @class leadManager
+ */
 var leadManager = leadManager || {};
 leadManager.preloaded = false;
 leadManager.leaderboards = {};
 
 /**
- * This really just loads up the leaderboard definitions. Not the scores
+ * This function only loads up the leaderboard definitions. Not the scores
  * themselves
+ * @memberOf leadManager
+ * @public
  */
 leadManager.preloadData = function () {
 	var request = gapi.client.games.leaderboards.list();
@@ -24,16 +29,28 @@ leadManager.preloadData = function () {
 		//welcome.dataLoaded(welcome.ENUM_LEADERBOARDS);
 	});
 };
-
+/**
+ * This function clear the loads up the leaderboard definitions.
+ * @memberOf leadManager
+ * @public
+ */
 leadManager.clearData = function () {
 	leadManager.leaderboards = {};
 	leadManager.preloaded = false;
 };
-
+/**
+ * This function clear the loads up the leaderboard definitions.
+ * @memberOf leadManager
+ * @param {integer} leadId : the Leaderboard Id
+ * @return {object} LeaderBoard
+ */
 leadManager.getLeaderboardObject = function (leadId) {
 	return leadManager.leaderboards[leadId];
 };
-
+/**
+ * This function clear the loads up the leaderboard definitions.
+ * @memberOf leadManager
+ */
 //leadManager.gotScore = function(receivedScore, difficulty, callback)
 leadManager.gotScore = function () {
 	var leaderboardId = 'CgkIup-kxJUFEAIQAQ';

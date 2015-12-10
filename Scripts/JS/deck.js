@@ -2,19 +2,21 @@
 var g_types = ["damage","move","destroy"];
 
 /** Inits the Deck Class
+ * @class Deck
  */
 var Deck = function () {
-	this.cardList = new Array(20);
 	this.cardList = [];
 	for (var i = 0; i < 10; ++i)
 	{
 		this.cardList.push(new UnitCard(Math.floor(Math.random() * 7),Math.floor(Math.random() * 7)))
-		this.cardList.push(new TrapCard(g_types[Math.floor(Math.random() * 3)],Math.floor(Math.random() * 7)))
+		this.cardList.push(new TrapCard(g_types[Math.floor(Math.random() * 3)],Math.floor(Math.random() * 5)))
 	}
 	this.Shuffle();
 }
 /** Mixes the cards contained in the deck.
  * Taken from http://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+ * @memberOf Deck
+ * @public
  */
 Deck.prototype.Shuffle = function () {
 	var array = this.cardList;
@@ -35,18 +37,22 @@ Deck.prototype.Shuffle = function () {
 	this.cardList = array;
 }
 /** This function returns the top card of the deck, and removes it from it.
+ * @memberOf Deck
+ * @public
  */
 Deck.prototype.TopCard = function () {
 	return this.cardList.pop();
 }
 /** This function returns the cardlist
- * WARNING: This is a security breach, should 
- * be disabled on non-test environnements.
+ * @memberOf Deck
+ * @public
  */
 Deck.prototype.GetCardList = function () {
 	return this.cardList;
 }
 /** Returns the number of Cards remaining in the Deck.
+ * @memberOf Deck
+ * @public
  */
 Deck.prototype.GetNumberOfCards = function () {
 	return this.cardList.length;

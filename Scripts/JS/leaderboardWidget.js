@@ -1,7 +1,12 @@
 "use strict";
-
+/** Inits the leadManager Class
+ * @class leaderboardWidget
+ */
 var leaderboardWidget = leaderboardWidget || {};
-
+/**
+ * @memberOf leaderboardWidget
+ * @public 
+ */
 leaderboardWidget.show = function (leadId) {
 	var leaderboardObject = leadManager.getLeaderboardObject(leadId);
 

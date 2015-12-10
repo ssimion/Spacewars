@@ -12,16 +12,6 @@ canvas
 	margin: 0 auto;
 }
 
-body, button, input
-{
-	color: #333;
-}
-
-button, input
-{
-	font-size: 1em;
-}
-
 #leaderboards, #leaderboard
 {
 	color:black;
@@ -45,6 +35,48 @@ button, input
 #leaderboardTable td { vertical-align: top; padding: 10px; }
 #leaderboardsTable td { vertical-align: top; padding: 10px; }
 
+#TopHealth{
+	color: red;
+	font-size: 200%;
+	vertical-align: bottom;
+	text-align: center;
+	background-color : rgba(0, 0, 255, 0.3);
+	border:1px #0000FF;
+	border-style: solid ;
+	border-radius:2px;
+}
+#TopMove{
+	color: red;
+	font-size: 200%;
+	vertical-align: bottom;
+	text-align: center;
+	background-color : rgba(0, 0, 255, 0.3);
+	border:1px #0000FF;
+	border-style: solid ;
+	border-radius:2px;
+}
+#BottomHealth{
+	color: red;
+	font-size: 200%;
+	vertical-align: bottom;
+	text-align: center;
+	width: 100px;
+	background-color : rgba(0, 0, 255, 0.3);
+	border:1px #0000FF;
+	border-style: solid ;
+	border-radius:2px;
+}
+#BottomMove{
+	color: red;
+	font-size: 200%;
+	vertical-align: bottom;
+	text-align: center;
+	width: 100px;
+	background-color : rgba(0, 0, 255, 0.3);
+	border:1px #0000FF;
+	border-style: solid ;
+	border-radius:2px;
+}
 
 .medIcon
 {
@@ -69,6 +101,10 @@ button, input
 	border-radius: 10px;
 }
 
+.ui-widget-header{
+    text-align: center;
+}
+
 #TrapCard:hover, #UnitCard:hover {
 }
 
@@ -76,14 +112,51 @@ button, input
 	position:absolute;
 	z-index:-1;
 }
+#board
+{
+	position:relative;
+}
+
+img{
+	width:80%;
+}
 
 .TrapCard,.UnitCard{ 
-	width: 60px; 
+	width: 79px; 
+	height: 120px;
+	text-align: center;
+	padding: 0.5em; 
+	padding-top: 0;
+	float: left; 
+	border-radius: 7px;
+	background-color:#BBB ;
+	margin: 10px 10px 10px 0; 
+	transition: background 0.1s ease-in-out;
+	-webkit-transition: background 0.1s ease-in-out;
+	-moz-transition: background 0.1s ease-in-out;
+	-ms-transition: background 0.1s ease-in-out;
+	-o-transition: background 0.1s ease-in-out;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	color: #FFF	;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	border:1px #0000FF;
+	border-style: solid ;
+}
+
+.SlotHighLight{
+	color: #FFFFFF;
+	width: 80px; 
 	height: 100px; 
 	padding: 0.5em; 
 	float: left; 
 	margin: 10px 10px 10px 0; 
+	background-color : rgba( 100,149,237, 0.3);
+	border:1px solid #0000FF;	
 }
+
+
 #Slot1, #Slot2, #Slot3,  #Slot4, #Slot5, #Slot6, 
 #EnemySlot1, #EnemySlot2, #EnemySlot3,  #EnemySlot4, #EnemySlot5, #EnemySlot6 
 { 
@@ -93,11 +166,45 @@ button, input
 	padding: 0.5em; 
 	float: left; 
 	margin: 10px 10px 10px 0; 
-	background:none;
-	border:1px solid #0000FF;
+	background-color : rgba(0, 0, 255, 0.3);
+	border:1px #0000FF;
+	border-style: solid ;
 }
 
-#board
-{
-	position:relative;
+.flat {
+	background-color: rgba(0, 0, 200, 0.7);
+	padding: 5px 5px;
+	font-size: 14px;
+	line-height: 100%;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.4);
+	color: #fff;
+	display:inline-block;
+	vertical-align: middle;
+	text-align: center;
+	cursor: pointer;
+	font-weight: bold;
+	transition: background 0.1s ease-in-out;
+	-webkit-transition: background 0.1s ease-in-out;
+	-moz-transition: background 0.1s ease-in-out;
+	-ms-transition: background 0.1s ease-in-out;
+	-o-transition: background 0.1s ease-in-out;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	color: #FFF	;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.flat:active {
+	margin-bottom: -1px;
+}
+
+.flat, .flat:hover, .flat:active {
+	outline: 0 none;
+	text-decoration: none;
+	color: #fff;
+}
+
+.flat:hover {
+	background-color: #DDDDDD;
 }

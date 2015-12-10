@@ -1,10 +1,24 @@
 "use strict";
-
+/**
+ * @class AchievementLoad
+ * @public
+ */
 var AchievementLoad = AchievementLoad || {};
-
+/**
+ * @memberOf AchievementLoad
+ * @public
+ */
 AchievementLoad.achievements = {};
+/**
+ * @memberOf AchievementLoad
+ * @public
+ */
 AchievementLoad.preloaded = false;
 
+/**
+ * @memberOf AchievementLoad
+ * @public
+ */
 AchievementLoad.loadData = function() {
   var request = gapi.client.games.achievementDefinitions.list();
   request.execute(function(Info) {
@@ -21,12 +35,18 @@ AchievementLoad.loadData = function() {
     }
   });
 };
-
+/**
+ * @memberOf AchievementLoad
+ * @public
+ */
 AchievementLoad.clearData = function() {
   AchievementLoad.achievements = {};
   AchievementLoad.preloaded = false;
 };
-
+/**
+ * @memberOf AchievementLoad
+ * @public
+ */
 AchievementLoad.loadAchievementsEarnedByPlayer = function() {
   var request = gapi.client.games.achievements.list({playerId: 'me'});
   request.execute(function(Info) {
@@ -49,13 +69,18 @@ AchievementLoad.loadAchievementsEarnedByPlayer = function() {
   AchievementLoad.preloaded = true;
 
 };
-
-
+/**
+ * @memberOf AchievementLoad
+ * @public
+ */
 AchievementLoad.getNameForId = function(Achievementid)
 {
   return AchievementLoad.achievements[Achievementid].name;
 };
-
+/**
+ * @memberOf AchievementLoad
+ * @public
+ */
 AchievementLoad.submitProgress = function(Achievementid, amount)
 {
   var request = gapi.client.games.achievements.increment(
@@ -75,8 +100,10 @@ AchievementLoad.submitProgress = function(Achievementid, amount)
     }
   });
 };
-
-
+/**
+ * @memberOf AchievementLoad
+ * @public
+ */
 AchievementLoad.unlockAchievement = function(Achievementid)
 {
   var request = gapi.client.games.achievements.unlock(

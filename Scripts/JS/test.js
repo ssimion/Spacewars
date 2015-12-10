@@ -1,11 +1,12 @@
 "use strict";
 
 /** Test Every Class Method of the Player Class
+ * @func TestPlayerClass
  */
 var TestPlayerClass = function () {
 	var TestPlayer = new Player("TestPlayer");
 	console.log(TestPlayer.GetName() !== "TestPlayer" ? "%c GetName() isn't working properly" : "%c GetName() is working properly", TestPlayer.GetName() !== "TestPlayer" ? "color:red" : "color:green");
-	TestStatement(TestPlayer.GetHealth() !== 100, "GetHealth()");
+	TestStatement(TestPlayer.GetHealth() !== 20, "GetHealth()");
 	TestPlayer.SetHealth(200);
 	TestStatement(TestPlayer.GetHealth() !== 200, "SetHealth()");
 	TestPlayer.AddHealth(5);
@@ -18,6 +19,9 @@ var TestPlayerClass = function () {
 	TestStatement(TestPlayer.GetNumberOfCardsInHand() !== 1, "AddCardToHand()");
 	TestPlayer.RemoveCardsFromHand(TestUnitCard)
 	TestStatement(TestPlayer.GetNumberOfCardsInHand() !== 0, "RemoveCardsFromHand()");
+	for (var  i = 0; i < 23; i++)
+		TestPlayer.DrawCardFromDeck();
+	TestStatement(TestPlayer.GetNumberOfCardsInHand() !== 20, "DrawCardFromDeck()");
 	console.log(" All tests for the player class have passed ! :)");
 }
 /** Test Every Class Method of the Player Class
@@ -45,6 +49,8 @@ var IsShuffled = function (array1,array2) {
 	}
 	return true;
 }
+/** Test Every Class Method of the Game Class
+ */
 var TestGameClass = function () {
 	var TestGame = new Game();
 	TestStatement(TestGame.GetCurrentTurn()  !== 0, "GetCurrentTurn()");
@@ -59,6 +65,7 @@ var TestCardClass = function () {
 	var TestUnitCard = new UnitCard();
 	TestStatement(TestUnitCard.toString() !== '[UnitCard "' + TestUnitCard.health + '"]', "toString");
 	TestStatement(TestUnitCard.GetHealth() !== 0, "GetHealth()");
+	TestStatement(TestUnitCard.GetID() == 42, "GetID()");
 	TestStatement(TestUnitCard.GetAttack() !== 1, "GetAttack()");
 	TestStatement(TestUnitCard.GetNameOfCard() !== "Spaceship", "GetNameOfCard()");
 	TestStatement(TestUnitCard.GetCardCost() !== 1, "GetCardCost()");
@@ -66,11 +73,12 @@ var TestCardClass = function () {
 	console.log(" All tests for the UnitCard class have passed ! :)");
 	var TestTrapCard = new TrapCard();
 	TestStatement(TestTrapCard.toString() !== '[TrapCard "' + TestTrapCard.health + '"]', "toString");
+	TestStatement(TestTrapCard.GetID() == 42, "GetID()");
 	TestStatement(TestTrapCard.GetType() !== "damage", "GetType()");
 	TestStatement(TestTrapCard.GetDamage() !== 5, "GetDamage()");
 	TestStatement(TestTrapCard.GetCardCost() !== 1, "GetCardCost()");
-	TestStatement(TestTrapCard.GetCardDescription() !== "", "GetCardDescription()");
-	TestStatement(TestTrapCard.GetNameOfCard() !== "", "GetNameOfCard()");
+	TestStatement(TestTrapCard.GetCardDescription() !== "Deals "+TestTrapCard.GetDamage()+" points of damage", "GetCardDescription()");
+	TestStatement(TestTrapCard.GetNameOfCard() !== "Trap Card", "GetNameOfCard()");
 	console.log(" All tests for the TrapCard class have passed ! :)");
 }
 

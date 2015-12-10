@@ -12,7 +12,6 @@
 		<script src="./Scripts/JS/jquery-1.10.2.js"></script>
 		<script src="./Scripts/JS/jquery-ui.js"></script>
 		<script src="./Scripts/JS/game-ui.js"></script>
-		<script src="./Scripts/JS/animatedbackground.js"></script>
 		<script src="./Scripts/JS/Leaderboards.js"></script>
 		<script src="./Scripts/JS/leaderboardManager.js"></script>
 		<script src="./Scripts/JS/leaderboardsTable.js"></script>
@@ -68,72 +67,77 @@
 			</table>
 			<input type="button" id="leaderboardBack" value="Go back" onclick="leaderboardTable.goBack()"/>
 		</div>
-
 		<canvas id="AnimatedBackground" >
-		</canvas> 
-		<table id="board">
-			<tr>
-				<td><button>A button element</button></td>
-				<td><input type="submit" value="A submit button"></td>
-				<td><button onclick="leaderboardsTable.showAllLeaderboards()">Leaderboards</button></td>
-			</tr>
-			<tr>
-				<td><button onclick="onCreateMatchClicked()">Create Match</button></td>
-				<td><button onclick="onJoinMatchClicked()">Join Match</button></td>
-			<tr>
-				<td colspan="3">
-					<div id="EnemySlot1" class="ui-widget-header">
-						<p>EnemyCardPlaceholder here</p>
-					</div>
-					<div id="EnemySlot2" class="ui-widget-header">
-						<p>EnemyCardPlaceholder here</p>
-					</div>
-					<div id="EnemySlot3" class="ui-widget-header">
-						<p>EnemyCardPlaceholder here</p>
-					</div>
-				</td>
-			</tr>
-			<tr>
-				<td colspan="3">
-					<div id="EnemySlot4" class="ui-widget-header">
-						<p>EnemyCardPlaceholder here</p>
-					</div>
-					<div id="EnemySlot5" class="ui-widget-header">
-						<p>EnemyCardPlaceholder here</p>
-					</div>
-					<div id="EnemySlot6" class="ui-widget-header">
-						<p>EnemyCardPlaceholder here</p>
-					</div>
-				</td>
-			</tr>	
-			<tr><td></td><td></td><td></td><td><button id="EndTurn" onclick="onEndTurnClicked()">EndTurn</button></td></tr>	 
-			<tr>
-			<td colspan="3">
-				<div id="Slot1" class="ui-widget-header">
-					<p>Drop here</p>
-				</div>
-				<div id="Slot2" class="ui-widget-header">
-					<p>Drop here</p>
-				</div>
-				<div id="Slot3" class="ui-widget-header">
-					<p>Drop here</p>
-				</div>
-			</td>
-			<tr>
-			<tr>
-			<td colspan="3">
-				<div id="Slot4" class="ui-widget-header">
-					<p>Drop here</p>
-				</div>
-				<div id="Slot5" class="ui-widget-header">
-					<p>Drop here</p>
-				</div>
-				<div id="Slot6" class="ui-widget-header">
-					<p>Drop here</p>
-				</div>
-			</td>
-			<tr>
-		</table>
+		</canvas>
+			<table id="board">
+				<tr>
+				<td></td>
+					<td><button class="flat" onclick="onCreateMatchClicked()">Create Match</button></td>
+					<td><button class="flat" onclick="onJoinMatchClicked()">Join Match</button></td>
+					<td><button class="flat" onclick="leaderboardsTable.showAllLeaderboards()">Leaderboards</button></td>
+				</tr>
+				<tr>
+					<td><div id="TopHealth"></div></td>
+					<td colspan="3">
+						<div id="EnemySlot1" class="ui-widget-header">
+							<p>&nbsp;</p>
+						</div>
+						<div id="EnemySlot2" class="ui-widget-header">
+							<p>&nbsp;</p>
+						</div>
+						<div id="EnemySlot3" class="ui-widget-header">
+							<p>&nbsp;</p>
+						</div>
+					</td>
+					<td><div id="TopMove"></div></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td colspan="3">
+						<div id="EnemySlot4" class="ui-widget-header">
+							<p>&nbsp;</p>
+						</div>
+						<div id="EnemySlot5" class="ui-widget-header">
+							<p>&nbsp;</p>
+						</div>
+						<div id="EnemySlot6" class="ui-widget-header">
+							<p>&nbsp;</p>
+						</div>
+					</td>
+					<td></td>
+				</tr>	
+				<tr><td width = "71px"></td><td></td><td></td><td></td><td><button class="flat" id="EndTurn" onclick="onEndTurnClicked()">EndTurn</button></td></tr>	 
+				<tr>
+					<td></td>
+					<td colspan="3">
+						<div id="Slot1" class="ui-widget-header">
+							<p>&nbsp;</p>
+						</div>
+						<div id="Slot2" class="ui-widget-header">
+							<p>&nbsp;</p>
+						</div>
+						<div id="Slot3" class="ui-widget-header">
+							<p>&nbsp;</p>
+						</div>
+					</td>
+					<td></td>	
+				</tr>
+				<tr>	
+					<td><div id="BottomHealth"></div></td>
+					<td colspan="3">
+						<div id="Slot4" class="ui-widget-header">
+							<p>&nbsp;</p>
+						</div>
+						<div id="Slot5" class="ui-widget-header">
+							<p>&nbsp;</p>
+						</div>
+						<div id="Slot6" class="ui-widget-header">
+							<p>&nbsp;</p>
+						</div>
+					</td>
+					<td><div id="BottomMove"></div></td>
+				</tr>
+			</table>
 		<!-- JavaScript at the bottom for fast page loading -->
 		<script>
 			// This call is specified by the google-signin-callback in our meta tag

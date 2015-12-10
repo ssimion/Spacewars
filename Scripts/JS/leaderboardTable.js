@@ -1,10 +1,15 @@
 "use strict";
-
+/** Inits the leadManager Class
+ * @class leaderboardTable
+ */
 var leaderboardTable = leaderboardTable || {}
 
 leaderboardTable.BACK_TO_GAME = 1;
 leaderboardTable.BACK_TO_ALL_LEADERBOARDS = 2;
-
+/**
+ * @memberOf leaderboardTable
+ * @public 
+ */
 leaderboardTable.goBackTo = leaderboardTable.BACK_TO_ALL_LEADERBOARDS
 
 	leaderboardTable.showLeaderboard = function (leaderboardId, backDestination) {
@@ -29,7 +34,10 @@ leaderboardTable.goBackTo = leaderboardTable.BACK_TO_ALL_LEADERBOARDS
 	});
 	$('#pageHeader').text(leadManager.getLeaderboardObject(leaderboardId).name);
 };
-
+/**
+ * @memberOf leaderboardTable
+ * @public 
+ */
 leaderboardTable.buildTableRowFromData = function (rowObj) {
 	var scorePlayer = rowObj.player;
 	var $tableRow = $('<tr></tr>');
@@ -42,7 +50,10 @@ leaderboardTable.buildTableRowFromData = function (rowObj) {
 
 	return $tableRow;
 };
-
+/**
+ * @memberOf leaderboardTable
+ * @public 
+ */
 leaderboardTable.goBack = function () {
 	$('#leaderboard').hide();
 	if (leaderboardTable.goBackTo == leaderboardTable.BACK_TO_ALL_LEADERBOARDS) {

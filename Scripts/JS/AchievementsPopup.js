@@ -1,6 +1,13 @@
 "use strict";
+/**
+ * @class AchPopup
+ * @public
+ */
 var AchPopup = AchPopup || {};
-
+/**
+ * @memberOf AchPopup
+ * @public
+ */
 AchPopup.showAchievementWidget = function AchWidgetPopup(Achievementid)
 {
   // Let's populate the little widget

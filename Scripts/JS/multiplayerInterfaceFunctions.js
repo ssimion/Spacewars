@@ -1,18 +1,25 @@
 "use strict";
-
+/** Handle the event when pressing the "Create Match" button
+ * and sends the turn data.
+ */
 function onCreateMatchClicked(){
 	opposingPlayerID = usersFriends[5].id;
 	console.log(usersFriends);
 	createTurnBasedMatch();
 }	
-
+/** Handle the event when pressing the "Join Match" button
+ * and sends the turn data.
+ */
 function onJoinMatchClicked(){
 	listActiveMatches();
 	console.log(listGamesInvitedTo[0]);
 	console.log(listGamesInvitedTo.matchId);
 	joinTurnBasedMatch(listGamesInvitedTo[0].matchId);
 }
-
+/** Handle the event when pressing the "End Turn" button
+ * and sends the turn data.
+ * @todo  update this with the actual data on the board.
+ */
 function onEndTurnClicked(){
-	finishTurn(10); // TODO update this with the actual data on the board.
+	finishTurn(10);
 }
