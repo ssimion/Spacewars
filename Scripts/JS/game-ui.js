@@ -200,9 +200,8 @@ function DrawCardInHand(Card, i) {
 				containment : "parent",
 				revert : function (valid) {
 					console.log(valid);
-					// -1 because if this is the last move we have already subtracted 1 from the 
-					// numberOfMoves so by this point it will be 0
-					if (valid && currentGame.activePlayer.GetRemainingNumberOfMoves() > -1) {
+					console.log(currentGame.activePlayer.GetRemainingNumberOfMoves());
+					if (valid && currentGame.activePlayer.GetRemainingNumberOfMoves() > 0) {
 						console.log("valid move");
 					} else {
 						console.log("invalid move");
@@ -223,11 +222,16 @@ function DrawCardInHand(Card, i) {
 			$("#TrapCard" + i).draggable({
 				containment : "parent",
 				revert : function (valid) {
-					if (valid && !currentGame.activePlayer.GetRemainingNumberOfMoves() == 0) {
-						return "invalid"
+					console.log(valid);
+					console.log(currentGame.activePlayer.GetRemainingNumberOfMoves());
+					if (valid && currentGame.activePlayer.GetRemainingNumberOfMoves() > 0) {
+						console.log("valid move");
 					} else {
-						return !valid;
+						console.log("invalid move");
+						return true;
 					}
+					
+					return !valid;
 				}
 			});
 		}
