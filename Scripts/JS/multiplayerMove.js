@@ -15,5 +15,5 @@ Move.prototype.SetEnemyHealth = function(healthAtEndTurn){
 }
 
 Move.prototype.SetBoardCards = function(){
-	this.boardcards = currentGame.activePlayer.GetCardsOnBoard();
+	this.boardCards = currentGame.activePlayer.GetCardsOnBoard();
 }
