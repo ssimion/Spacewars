@@ -103,7 +103,7 @@ $(document).ready(function () {
 				currentGame.activePlayer.RemoveCardsFromBoard(Card);
 				$(this).droppable("option", "disabled", false);
 				return;
-			} else if (CardName == "Spaceship") {
+			} else if (CardName == "Spaceship(1)") {
 				//Add the attacking Property
 				$(ui.helper[0]).draggable('disable')
 				$(ui.helper[0]).click(function () {
