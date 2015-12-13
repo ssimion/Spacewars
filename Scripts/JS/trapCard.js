@@ -72,4 +72,5 @@ TrapCard.prototype.GetJSONObject = function(){
 		"descriptionOfCard":this.descriptionOfCard,
 		"uniqueID":this.uniqueID
 	}
+	return cardJSONObject;
 }

@@ -47,4 +47,5 @@ UnitCard.prototype.GetJSONObject = function(){
 		"health":this.health,
 		"attack":this.attack
 	}
+	return cardJSONObject;
 }
