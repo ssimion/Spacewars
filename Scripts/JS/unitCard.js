@@ -38,3 +38,13 @@ UnitCard.prototype.GetAttack = function()
 UnitCard.prototype.toString = function(){ 
 	return '[UnitCard "' + this.health + '"]';
 }
+
+UnitCard.prototype.GetJSONObject = function(){
+	var cardJSONObject = {
+		"nameOfCard":nameOfCard,
+		"descriptionOfCard":descriptionOfCard,
+		"uniqueID": uniqueID,
+		"health": health,
+		"attack": attack
+	}
+}

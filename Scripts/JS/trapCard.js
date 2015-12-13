@@ -63,3 +63,13 @@ TrapCard.prototype.GetMoveBonus = function()
 TrapCard.prototype.toString = function(){ 
 	return '[TrapCard "' + this.health + '"]';
 }
+
+TrapCard.prototype.GetJSONObject = function(){
+	var cardJSONObject = {
+		"nameOfCard":nameOfCard,
+		"type":type,
+		"effect":effect,
+		"descriptionOfCard":descriptionOfCard,
+		"uniqueID": uniqueID
+	}
+}

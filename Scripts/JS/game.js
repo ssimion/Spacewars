@@ -11,11 +11,11 @@ var g_oldPlayerData = {};
  * @class Game
  */ 
 function Game() {
-	this.PlayerArray = [new Player("Stan"),new Player("Stef")]
+	this.PlayerArray = [new Player("Player1"),new Player("Player2")]
 	this.turnNumber = 0;
 	this.activePlayer = this.PlayerArray[0];
 	this.activePlayerMove = new Move();
-	this.previousPlayerMove = new Move();
+	this.previousPlayerMoveString = "";
 }
 /** Init function
  * @memberOf Game
@@ -44,6 +44,16 @@ Game.prototype.NextTurn = function () {
 
 Game.prototype.GetActivePlayerMove = function() {
 	return this.activePlayerMove;
+}
+
+Game.prototype.GetActivePlayerMoveString = function() {
+	var activePlayerMoveString = "";
+	for(int i = 0; i < this.activePlayer.GetCardsOnBoard().length; ++i)
+	{
+		var jsonFormatObj = JSON.stringify(this.activePlayer.GetCardsOnBoard()[i].GetJSONObject());
+		activePlayerMoveString += jsonFormatObj;
+	}
+	return activePlayerMoveString;
 }
 
 Game.prototype.SetGameData = function(data) {
