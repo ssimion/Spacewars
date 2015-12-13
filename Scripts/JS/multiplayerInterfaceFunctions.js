@@ -21,5 +21,5 @@ function onJoinMatchClicked(){
  * @todo  update this with the actual data on the board.
  */
 function onEndTurnClicked(){
-	finishTurn(10);
+	finishTurn(currentGame.GetActivePlayerMove());
 }

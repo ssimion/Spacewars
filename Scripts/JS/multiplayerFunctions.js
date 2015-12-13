@@ -85,6 +85,7 @@ function getMatchData() {
 			userMatchStatus = "USER_TURN";
 			console.log("User took a turn");
 			matchVersion = matchDataResponse.matchVersion;
+			currentGame.SetGameData(atob(response.data.data));
 		}
 		matchDataReceived = true;
 	});

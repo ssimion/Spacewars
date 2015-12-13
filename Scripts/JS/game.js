@@ -15,6 +15,7 @@ function Game() {
 	this.turnNumber = 0;
 	this.activePlayer = this.PlayerArray[0];
 	this.activePlayerMove = new Move();
+	this.previousPlayerMove = new Move();
 }
 /** Init function
  * @memberOf Game
@@ -39,6 +40,14 @@ Game.prototype.NextTurn = function () {
 	this.activePlayerMove.SetEnemyHealth(this.GetInactivePlayer().GetHealth());
 	this.activePlayerMove.SetBoardCards(this.activePlayer.GetCardsOnBoard());
 	console.log(this.activePlayerMove);
+}
+
+Game.prototype.GetActivePlayerMove() {
+	return this.activePlayerMove;
+}
+
+Game.prototype.SetGameData(data) {
+	this.previousPlayerMove = data;
 }
 /** This function returns the active player.
  * @memberOf Game
