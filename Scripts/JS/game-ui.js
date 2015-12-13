@@ -97,7 +97,7 @@ $(document).ready(function () {
 					currentGame.activePlayer.AddMove();
 				}
 
-				// Destroy the Card After Usage an reenable the slot
+				// Destroy the Card After Usage and reenable the slot
 				$(ui.helper[0]).show().fadeOut("slow");
 				console.log($(event.target));
 				currentGame.activePlayer.RemoveCardsFromBoard(Card);
@@ -199,8 +199,9 @@ function DrawCardInHand(Card, i) {
 				snapMode : "inner",
 				containment : "parent",
 				revert : function (valid) {
-					if (valid && !currentGame.activePlayer.GetRemainingNumberOfMoves() == 0) { ;
-						return "invalid"
+					console.log(valid);
+					if (valid && currentGame.activePlayer.GetRemainingNumberOfMoves() != 0) {
+						return "invalid";
 					} else {
 						return !valid;
 					}
