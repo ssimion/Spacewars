@@ -94,6 +94,8 @@ $(document).ready(function () {
 				}
 				if (TrapCard.GetType() === "move") {
 					console.log(TrapCard);
+					// removing one to keep the number of moves in sync (max 2)
+					currentGame.activePlayer.RemoveOneMove();
 					currentGame.activePlayer.AddMove();
 				}
 
