@@ -22,6 +22,8 @@ function WinBackToBackGamesAchievement() {
 	AchPopup.showAchievementWidget(CgkIup-kxJUFEAIQAg);
 	window.location.href = "https://www.googleapis.com/games/v1/achievements/CgkIup-kxJUFEAIQAg/unlock";
 }
+/** Send an achievement for the first play
+ */
 function PlayTheFirstGameEverAchievement() {
 	AchPopup.showAchievementWidget(CgkIup-kxJUFEAIQAg);
 	window.location.href = "https://www.googleapis.com/games/v1/achievements/CgkIup-kxJUFEAIQAg/unlock";

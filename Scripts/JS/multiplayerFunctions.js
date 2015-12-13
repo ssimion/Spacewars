@@ -69,7 +69,8 @@ function joinTurnBasedMatch(id) {
 		getMatchData();
 	});
 }
-
+/** This function gets the data from the other player.
+ */
 function getMatchData() {
 	console.log("Getting the match data");
 	userMatchStatus = "working";
@@ -90,7 +91,8 @@ function getMatchData() {
 		matchDataReceived = true;
 	});
 }
-
+/** This function is called at each end of turn.
+ */
 function finishTurn(dataToSend) {
 	// Keep Track of the game Advancement.
 	currentGame.NextTurn();

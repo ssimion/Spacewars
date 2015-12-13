@@ -201,17 +201,7 @@ function DrawCardInHand(Card, i) {
 				snapMode : "inner",
 				containment : "parent",
 				revert : function (valid) {
-					console.log(valid);
-					console.log(currentGame.activePlayer.GetRemainingNumberOfMoves());
-					if (valid && currentGame.activePlayer.GetRemainingNumberOfMoves() > 0) {
-						currentGame.activePlayer.RemoveOneMove();
-						console.log("valid move");
-					} else {
-						console.log("invalid move");
-						return true;
-					}
-					
-					return !valid;
+					return IsDropValid(valid);
 				}
 			});
 		} else {
@@ -225,17 +215,7 @@ function DrawCardInHand(Card, i) {
 			$("#TrapCard" + i).draggable({
 				containment : "parent",
 				revert : function (valid) {
-					console.log(valid);
-					console.log(currentGame.activePlayer.GetRemainingNumberOfMoves());
-					if (valid && currentGame.activePlayer.GetRemainingNumberOfMoves() > 0) {
-						currentGame.activePlayer.RemoveOneMove();
-						console.log("valid move");
-					} else {
-						console.log("invalid move");
-						return true;
-					}
-					
-					return !valid;
+					return IsDropValid(valid);
 				}
 			});
 		}
@@ -259,4 +239,22 @@ function DrawPlayerData() {
 		document.getElementById("TopHealth").innerHTML = Health2 + "/20";
 		document.getElementById("TopMove").innerHTML = Moves2;
 	});
+}
+/** This function checks wether the card should dropped or not
+ * @param {object} object : the object that is being tested
+ * @return true if move is invalid, !object otherwise.
+ */
+function IsDropValid(object){
+	console.log(object);
+	console.log(currentGame.activePlayer.GetRemainingNumberOfMoves());
+	
+	if (object && currentGame.activePlayer.GetRemainingNumberOfMoves() > 0) {
+		currentGame.activePlayer.RemoveOneMove();
+		console.log("valid move");
+	} else {
+		console.log("invalid move");
+		return true;
+	}
+
+	return !object;	
 }

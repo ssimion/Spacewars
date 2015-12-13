@@ -15,7 +15,7 @@ var TrapCard = function(type,effect) {
 		this.descriptionOfCard = "Destroys A Card";
 	}
 	else if (this.type == "move"){
-		this.effect = 2; //Max move is set to one as it would be abused otherwise
+		this.effect = 2;
 		this.descriptionOfCard = "Adds one move for this turn";
 	}
 	else {
