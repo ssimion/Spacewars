@@ -48,7 +48,8 @@ Game.prototype.GetActivePlayerMove = function() {
 
 Game.prototype.GetActivePlayerMoveString = function() {
 	var activePlayerMoveString = "";
-	for(int i = 0; i < this.activePlayer.GetCardsOnBoard().length; ++i)
+	var i;
+	for(i = 0; i < this.activePlayer.GetCardsOnBoard().length; i++)
 	{
 		var jsonFormatObj = JSON.stringify(this.activePlayer.GetCardsOnBoard()[i].GetJSONObject());
 		activePlayerMoveString += jsonFormatObj;
