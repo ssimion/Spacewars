@@ -42,11 +42,11 @@ Game.prototype.NextTurn = function () {
 	console.log(this.activePlayerMove);
 }
 
-Game.prototype.GetActivePlayerMove() {
+Game.prototype.GetActivePlayerMove = function() {
 	return this.activePlayerMove;
 }
 
-Game.prototype.SetGameData(data) {
+Game.prototype.SetGameData = function(data) {
 	this.previousPlayerMove = data;
 }
 /** This function returns the active player.
