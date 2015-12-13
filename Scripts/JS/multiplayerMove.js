@@ -10,7 +10,7 @@ var Move = function () {
 	this.boardCards = [];
 };
 
-Move.prototype.SetDamage = function(int damageDoneThisTurn){
+Move.prototype.SetDamage = function(damageDoneThisTurn){
 	this.damageDone += damageDoneThisTurn;
 }
 
