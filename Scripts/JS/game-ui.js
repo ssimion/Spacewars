@@ -80,7 +80,7 @@ $(document).ready(function () {
 		// but this will have to do for now
 		if (currentGame.activePlayer.GetRemainingNumberOfMoves() > 0)
 		{
-			currentGame.activePlayer.RemoveOneMove();
+			//currentGame.activePlayer.RemoveOneMove();
 			var Card = FindMatchingCardInHand(ui.helper[0].lastChild.innerHTML);
 			var CardName = ui.helper[0].firstChild.innerHTML;
 			currentGame.activePlayer.AddCardsToBoard(Card);
@@ -202,6 +202,7 @@ function DrawCardInHand(Card, i) {
 					console.log(valid);
 					console.log(currentGame.activePlayer.GetRemainingNumberOfMoves());
 					if (valid && currentGame.activePlayer.GetRemainingNumberOfMoves() > 0) {
+						currentGame.activePlayer.RemoveOneMove();
 						console.log("valid move");
 					} else {
 						console.log("invalid move");
@@ -225,6 +226,7 @@ function DrawCardInHand(Card, i) {
 					console.log(valid);
 					console.log(currentGame.activePlayer.GetRemainingNumberOfMoves());
 					if (valid && currentGame.activePlayer.GetRemainingNumberOfMoves() > 0) {
+						currentGame.activePlayer.RemoveOneMove();
 						console.log("valid move");
 					} else {
 						console.log("invalid move");
