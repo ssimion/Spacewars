@@ -199,12 +199,13 @@ function DrawCardInHand(Card, i) {
 				snapMode : "inner",
 				containment : "parent",
 				revert : function (valid) {
-					console.log(valid);
-					if (valid && currentGame.activePlayer.GetRemainingNumberOfMoves() != 0) {
-						return "invalid";
+					if (valid && currentGame.activePlayer.GetRemainingNumberOfMoves() > 0) {
+						console.log("valid move");
 					} else {
-						return !valid;
+						console.log("invalid move");
 					}
+					
+					return !valid;
 				}
 			});
 		} else {
