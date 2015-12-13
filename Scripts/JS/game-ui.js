@@ -80,6 +80,7 @@ $(document).ready(function () {
 		var Card = FindMatchingCardInHand(ui.helper[0].lastChild.innerHTML);
 		var CardName = ui.helper[0].firstChild.innerHTML;
 		currentGame.activePlayer.AddCardsToBoard(Card);
+		currentGame.activePlayer.RemoveCardsFromHand(Card);
 		if (CardName == "Trap Card(1)") {
 			var TrapCard = FindMatchingCardOnBoard(ui.helper[0].lastChild.innerHTML);
 			if (TrapCard.GetType() === "damage") {
@@ -95,6 +96,7 @@ $(document).ready(function () {
 			// Destroy the Card After Usage an reenable the slot
 			$(ui.helper[0]).show().fadeOut("slow");
 			console.log($(event.target));
+			currentGame.activePlayer.RemoveCardsFromBoard(Card);
 			$(this).droppable("option", "disabled", false);
 			return;
 		} else if (CardName == "Spaceship") {

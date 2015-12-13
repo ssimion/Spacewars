@@ -105,11 +105,24 @@ Player.prototype.RemoveOneMove = function () {
 /** Remove one card from the player's hand
  * @memberOf Player
  * @public
+ * @param {object} cardToRemove : The Card to be removed.
  */
 Player.prototype.RemoveCardsFromHand = function (cardToRemove) {
 	if (this.handCards.length > 0) {
 		var index = this.handCards.indexOf(cardToRemove);
 		this.handCards.splice(index, 1);
+	}
+	this.numberOfCardsInHand--;
+}
+/** Remove one card from the player's board
+ * @memberOf Player
+ * @public
+ * @param {object} cardToRemove : The Card to be removed.
+ */
+Player.prototype.RemoveCardsFromBoard = function (cardToRemove) {
+	if (this.boardCards.length > 0) {
+		var index = this.boardCards.indexOf(cardToRemove);
+		this.boardCards.splice(index, 1);
 	}
 	this.numberOfCardsInHand--;
 }
