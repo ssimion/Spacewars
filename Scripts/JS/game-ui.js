@@ -75,10 +75,8 @@ $(document).ready(function () {
 	$("html").on("drop", function (event, ui) {
 		event.preventDefault();
 		event.stopPropagation();
-		if (currentGame.activePlayer.GetRemainingNumberOfMoves() >= 0)
+		if (currentGame.activePlayer.GetRemainingNumberOfMoves() > 0)
 			currentGame.activePlayer.RemoveOneMove();
-		if (currentGame.activePlayer.GetRemainingNumberOfMoves() == -1)
-			return;
 		var Card = FindMatchingCardInHand(ui.helper[0].lastChild.innerHTML);
 		var CardName = ui.helper[0].firstChild.innerHTML;
 		currentGame.activePlayer.AddCardsToBoard(Card);
@@ -104,7 +102,7 @@ $(document).ready(function () {
 			$(ui.helper[0]).draggable('disable')
 			$(ui.helper[0]).click(function () {
 				//If the player has remaining moves
-				if (currentGame.activePlayer.GetRemainingNumberOfMoves() >= 0) {
+				if (currentGame.activePlayer.GetRemainingNumberOfMoves() > 0) {
 					currentGame.activePlayer.RemoveOneMove();
 					var UnitCard = FindMatchingCardOnBoard(ui.helper[0].lastChild.innerHTML);
 					currentGame.GetInactivePlayer().RemoveHealth(UnitCard.GetAttack());
@@ -162,7 +160,7 @@ $(document).ready(function () {
 		$("#Slot" + slotIndex).droppable({
 			accept : slotAcceptedCards,
 			drop : function (event, ui) {
-				if (currentGame.activePlayer.GetRemainingNumberOfMoves() >= 0) {
+				if (currentGame.activePlayer.GetRemainingNumberOfMoves() > 0) {
 					$(this).droppable("option", "disabled", true);
 					$(this).addClass("SlotHighLight");
 					$(this).find("p");
