@@ -41,10 +41,10 @@ UnitCard.prototype.toString = function(){
 
 UnitCard.prototype.GetJSONObject = function(){
 	var cardJSONObject = {
-		"nameOfCard":nameOfCard,
-		"descriptionOfCard":descriptionOfCard,
-		"uniqueID": uniqueID,
-		"health": health,
-		"attack": attack
+		"nameOfCard":this.nameOfCard,
+		"descriptionOfCard":this.descriptionOfCard,
+		"uniqueID":this.uniqueID,
+		"health":this.health,
+		"attack":this.attack
 	}
 }
