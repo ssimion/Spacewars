@@ -36,6 +36,9 @@ Game.prototype.Init =  function (){
  */
 Game.prototype.NextTurn = function () {
 	this.turnNumber++;
+	this.activePlayerMove.SetEnemyHealth(this.GetInactivePlayer().GetHealth());
+	this.activePlayerMove.SetBoardCards(this.activePlayer.GetCardsOnBoard());
+	console.log(this.activePlayerMove);
 }
 /** This function returns the active player.
  * @memberOf Game

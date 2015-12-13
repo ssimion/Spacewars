@@ -2,16 +2,16 @@
 
 /** Inits the Move Class that contains the data sent to the server at the end of each turn
  * @class Move
- * @param {int} damageDone: the damage done by this player to the receiving player
+ * @param {int} newEnemyHealth: the health of the receiving player at the end of the current player's turn, after applying the damage
  * @param {Card array} boardCards: the state of the board for the player sending the data
  */
 var Move = function () {
-	this.damageDone = 0;
+	this.newEnemyHealth = 0;
 	this.boardCards = [];
 };
 
-Move.prototype.SetDamage = function(damageDoneThisTurn){
-	this.damageDone += damageDoneThisTurn;
+Move.prototype.SetEnemyHealth = function(healthAtEndTurn){
+	this.newEnemyHealth = healthAtEndTurn;
 }
 
 Move.prototype.SetBoardCards = function(){
