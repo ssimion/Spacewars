@@ -199,10 +199,14 @@ function DrawCardInHand(Card, i) {
 				snapMode : "inner",
 				containment : "parent",
 				revert : function (valid) {
-					if (valid && currentGame.activePlayer.GetRemainingNumberOfMoves() > 0) {
+					console.log(valid);
+					// -1 because if this is the last move we have already subtracted 1 from the 
+					// numberOfMoves so by this point it will be 0
+					if (valid && currentGame.activePlayer.GetRemainingNumberOfMoves() > -1) {
 						console.log("valid move");
 					} else {
 						console.log("invalid move");
+						return true;
 					}
 					
 					return !valid;
