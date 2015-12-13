@@ -75,44 +75,49 @@ $(document).ready(function () {
 	$("html").on("drop", function (event, ui) {
 		event.preventDefault();
 		event.stopPropagation();
+		// shouldn't be able to drop more cards when there are no more moves
+		// ideally we wouldn't let the user pick them up in the first place
+		// but this will have to do for now
 		if (currentGame.activePlayer.GetRemainingNumberOfMoves() > 0)
+		{
 			currentGame.activePlayer.RemoveOneMove();
-		var Card = FindMatchingCardInHand(ui.helper[0].lastChild.innerHTML);
-		var CardName = ui.helper[0].firstChild.innerHTML;
-		currentGame.activePlayer.AddCardsToBoard(Card);
-		currentGame.activePlayer.RemoveCardsFromHand(Card);
-		if (CardName == "Trap Card(1)") {
-			var TrapCard = FindMatchingCardOnBoard(ui.helper[0].lastChild.innerHTML);
-			if (TrapCard.GetType() === "damage") {
-				console.log(TrapCard);
-				currentGame.GetInactivePlayer().RemoveHealth(TrapCard.GetDamage());
-				console.log(currentGame.GetInactivePlayer().GetHealth());
-			}
-			if (TrapCard.GetType() === "move") {
-				console.log(TrapCard);
-				currentGame.activePlayer.AddMove();
-			}
-
-			// Destroy the Card After Usage an reenable the slot
-			$(ui.helper[0]).show().fadeOut("slow");
-			console.log($(event.target));
-			currentGame.activePlayer.RemoveCardsFromBoard(Card);
-			$(this).droppable("option", "disabled", false);
-			return;
-		} else if (CardName == "Spaceship") {
-			//Add the attacking Property
-			$(ui.helper[0]).draggable('disable')
-			$(ui.helper[0]).click(function () {
-				//If the player has remaining moves
-				if (currentGame.activePlayer.GetRemainingNumberOfMoves() > 0) {
-					currentGame.activePlayer.RemoveOneMove();
-					var UnitCard = FindMatchingCardOnBoard(ui.helper[0].lastChild.innerHTML);
-					currentGame.GetInactivePlayer().RemoveHealth(UnitCard.GetAttack());
+			var Card = FindMatchingCardInHand(ui.helper[0].lastChild.innerHTML);
+			var CardName = ui.helper[0].firstChild.innerHTML;
+			currentGame.activePlayer.AddCardsToBoard(Card);
+			currentGame.activePlayer.RemoveCardsFromHand(Card);
+			if (CardName == "Trap Card(1)") {
+				var TrapCard = FindMatchingCardOnBoard(ui.helper[0].lastChild.innerHTML);
+				if (TrapCard.GetType() === "damage") {
+					console.log(TrapCard);
+					currentGame.GetInactivePlayer().RemoveHealth(TrapCard.GetDamage());
 					console.log(currentGame.GetInactivePlayer().GetHealth());
 				}
-				return false;
-			});
+				if (TrapCard.GetType() === "move") {
+					console.log(TrapCard);
+					currentGame.activePlayer.AddMove();
+				}
 
+				// Destroy the Card After Usage an reenable the slot
+				$(ui.helper[0]).show().fadeOut("slow");
+				console.log($(event.target));
+				currentGame.activePlayer.RemoveCardsFromBoard(Card);
+				$(this).droppable("option", "disabled", false);
+				return;
+			} else if (CardName == "Spaceship") {
+				//Add the attacking Property
+				$(ui.helper[0]).draggable('disable')
+				$(ui.helper[0]).click(function () {
+					//If the player has remaining moves
+					if (currentGame.activePlayer.GetRemainingNumberOfMoves() > 0) {
+						currentGame.activePlayer.RemoveOneMove();
+						var UnitCard = FindMatchingCardOnBoard(ui.helper[0].lastChild.innerHTML);
+						currentGame.GetInactivePlayer().RemoveHealth(UnitCard.GetAttack());
+						console.log(currentGame.GetInactivePlayer().GetHealth());
+					}
+					return false;
+				});
+
+			}
 		}
 
 	});

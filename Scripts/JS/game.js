@@ -5,6 +5,7 @@
 var userMatchStatus = "";
 var g_NumberofCardsAtStart = 5;
 var g_oldPlayerData = {};
+
 /** Inits the Game Class
  * TODO: The names should be taken from the google accounts.
  * @class Game
@@ -13,6 +14,7 @@ function Game() {
 	this.PlayerArray = [new Player("Stan"),new Player("Stef")]
 	this.turnNumber = 0;
 	this.activePlayer = this.PlayerArray[0];
+	this.activePlayerMove = new Move();
 }
 /** Init function
  * @memberOf Game
