@@ -47,11 +47,20 @@ Game.prototype.GetActivePlayerMove = function() {
 }
 
 Game.prototype.GetActivePlayerMoveString = function() {
-	var activePlayerMoveString = "";
+	var activePlayerMoveString = "[";
 	for(var i = 0; i < this.activePlayer.GetCardsOnBoard().length; i++)
 	{
 		var jsonFormatObj = JSON.stringify(this.activePlayer.GetCardsOnBoard()[i].GetJSONObject());
+		
 		activePlayerMoveString += jsonFormatObj;
+		if(i != this.activePlayer.GetCardsOnBoard().length - 1)
+		{
+			activePlayerMoveString += ",";
+		}
+		else
+		{
+			activePlayerMoveString += "]";
+		}
 	}
 	return activePlayerMoveString;
 }
