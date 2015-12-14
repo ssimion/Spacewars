@@ -109,10 +109,10 @@ Game.prototype.DrawEnemySlots = function(){
  */
 Game.prototype.GetActivePlayerMoveString = function() {
 	var activePlayerMoveString = "";
+	var healthString = "{\"health\":" + currentGame.GetInactivePlayer().GetHealth();
 	if(this.activePlayer.GetCardsOnBoard().length > 0)
 	{
-		var healthString = "{\"health\":" + currentGame.GetInactivePlayer().GetHealth() + ", \"cards\":";
-		activePlayerMoveString = healthString + "[";
+		activePlayerMoveString = ", \"cards\":" + "[";
 		for(var i = 0; i < this.activePlayer.GetCardsOnBoard().length; i++)
 		{
 			var jsonFormatObj = JSON.stringify(this.activePlayer.GetCardsOnBoard()[i].GetJSONObject());
@@ -127,8 +127,10 @@ Game.prototype.GetActivePlayerMoveString = function() {
 				activePlayerMoveString += "]}";
 			}
 		}
+	} else {
+	healthString += "}";
 	}
-	return activePlayerMoveString;
+	return healthString + activePlayerMoveString;
 }
 /** This function sets the game data
  * @memberOf Game
