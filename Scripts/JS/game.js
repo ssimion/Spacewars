@@ -181,6 +181,9 @@ Game.prototype.PlayerDataChanged = function (){
 function Update(){
 	if(currentGame.PlayerDataChanged())
 		DrawPlayerData();
+	
+	getMatchData(); 
+	
 	if (userMatchStatus == "USER_AWAITING_TURN" && matchDataReceived){
 		getMatchData(); 
 	}
