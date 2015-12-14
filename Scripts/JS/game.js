@@ -151,7 +151,7 @@ Game.prototype.GetOpposingPlayerBoard = function(){
 		// check whether this is a unitCard
 		var isUnitCard = false; 
 		
-		for(var i = 0; i < previousPlayerMoveJSONformat.length; i++)
+		for(var i = 0; i < previousPlayerMoveJSONformat.cards.length; i++)
 		{
 			isUnitCard = previousPlayerMoveJSONformat.cards[i].hasOwnProperty("health") ? true : false;
 			
