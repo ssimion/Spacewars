@@ -218,7 +218,7 @@ function Update(){
 	
 	//setTimeout(getMatchData, 5000);
 	
-	if ((userMatchStatus == "USER_AWAITING_TURN" || userMatchStatus == "working") && matchDataReceived){
+	if ((userMatchStatus == "USER_AWAITING_TURN" /*|| userMatchStatus == "working")*/) && matchDataReceived){
 		getMatchData(); 
 	}
 	// CallBack
