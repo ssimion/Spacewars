@@ -108,7 +108,8 @@ Game.prototype.DrawEnemySlots = function(){
  * @public
  */
 Game.prototype.GetActivePlayerMoveString = function() {
-	var activePlayerMoveString = "[";
+	var healthString = "health:" + currentGame.GetInactivePlayer().GetHealth() + ", cards:";
+	var activePlayerMoveString = healthString + "[";
 	for(var i = 0; i < this.activePlayer.GetCardsOnBoard().length; i++)
 	{
 		var jsonFormatObj = JSON.stringify(this.activePlayer.GetCardsOnBoard()[i].GetJSONObject());
