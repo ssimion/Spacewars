@@ -73,14 +73,24 @@ Game.prototype.SetGameData = function(data) {
 Game.prototype.GetOpposingPlayerBoard = function(){
 	var previousPlayerMoveJSONformat = JSON.parse(this.previousPlayerMoveString);
 	var opposingPlayerBoard = [];
-	var opPlayerCard = new Card();
+	var opPlayerCard;
+	
+	// check whether this is a unitCard
+	var isUnitCard = previousPlayerMoveJSONformat[i].hasOwnProperty("health") ? true : false;
+	
+	if(isUnitCard){
+		opPlayerCard = new UnitCard();
+	} else {
+		opPlayerCard = new TrapCard();
+	}
+	
 	for(var i = 0; i < previousPlayerMoveJSONformat.length; i++)
 	{
 		opPlayerCard.nameOfCard = previousPlayerMoveJSONformat[i].nameOfCard;
 		opPlayerCard.descriptionOfCard = previousPlayerMoveJSONformat[i].descriptionOfCard;
 		opPlayerCard.uniqueID = previousPlayerMoveJSONformat[i].uniqueID;
 
-		if(previousPlayerMoveJSONformat[i].hasOwnProperty("health")) {// this is a unitCard
+		if(isUnitCard) {
 			opPlayerCard.health = previousPlayerMoveJSONformat[i].health;
 			opPlayerCard.attack = previousPlayerMoveJSONformat[i].attack;
 		} else {
