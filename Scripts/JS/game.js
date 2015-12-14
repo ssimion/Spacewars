@@ -70,8 +70,28 @@ Game.prototype.SetGameData = function(data) {
 	this.previousPlayerMoveString = data;
 }
 
-Game.prototype.CreateOpposingPlayerBoard = function(){
+Game.prototype.GetOpposingPlayerBoard = function(){
 	var previousPlayerMoveJSONformat = JSON.parse(this.previousPlayerMoveString);
+	var opposingPlayerBoard = [];
+	var opPlayerCard = new Card();
+	for(var i = 0; i < previousPlayerMoveJSONformat.length; i++)
+	{
+		opPlayerCard.nameOfCard = previousPlayerMoveJSONformat[i].nameOfCard;
+		opPlayerCard.descriptionOfCard = previousPlayerMoveJSONformat[i].descriptionOfCard;
+		opPlayerCard.uniqueID = previousPlayerMoveJSONformat[i].uniqueID;
+
+		if(previousPlayerMoveJSONformat[i].hasOwnProperty("health")) {// this is a unitCard
+			opPlayerCard.health = previousPlayerMoveJSONformat[i].health;
+			opPlayerCard.attack = previousPlayerMoveJSONformat[i].attack;
+		} else {
+			opPlayerCard.type = previousPlayerMoveJSONformat[i].type;
+			opPlayerCard.effect = previousPlayerMoveJSONformat[i].effect;
+		}
+		
+		opposingPlayerBoard.push(opPlayerCard);
+	}
+	
+	return opposingPlayerBoard;
 }
 
 /** This function returns the active player.
@@ -115,7 +135,7 @@ function Update(){
 	if (userMatchStatus == "USER_AWAITING_TURN" && matchDataReceived){
 		getMatchData(); 
 	}
-	currentGame.CreateOpposingPlayerBoard();
+	currentGame.GetOpposingPlayerBoard();
 	// CallBack
 	requestAnimationFrame(Update);
 }

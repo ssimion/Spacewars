@@ -67,10 +67,10 @@ TrapCard.prototype.toString = function(){
 TrapCard.prototype.GetJSONObject = function(){
 	var cardJSONObject = {
 		"nameOfCard":this.nameOfCard,
+		"descriptionOfCard":this.descriptionOfCard,
+		"uniqueID":this.uniqueID,
 		"type":this.type,
 		"effect":this.effect,
-		"descriptionOfCard":this.descriptionOfCard,
-		"uniqueID":this.uniqueID
 	}
 	return cardJSONObject;
 }
