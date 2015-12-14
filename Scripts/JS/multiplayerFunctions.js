@@ -87,6 +87,7 @@ function getMatchData() {
 			console.log("User took a turn");
 			matchVersion = matchDataResponse.matchVersion;
 			currentGame.SetGameData(atob(matchDataResponse.data.data));
+			currentGame.DrawEnemySlots();
 		}
 		matchDataReceived = true;
 	});
