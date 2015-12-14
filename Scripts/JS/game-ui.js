@@ -266,21 +266,17 @@ function IsDropValid(object){
 }
 
 /**
-*/
-DisplayFriendList();
-function DisplayFriendList(){
-	var friend = "";
-		$(document).ready(function () {
-	$('body').append(
-	"<div id='FriendList' class='FriendList'>" +
-	"</div>");
-		});
-		$(document).ready(function () {
-			for(var i = 0; i <  usersFriends.length;++i){
-				$('#FriendList').append(			
-				"<p id='paragraph"+i+"'onclick='opposingPlayerID = usersFriends["+i+"].id'>" + usersFriends[i].displayName + "</p>")
-			}
-		});	
-		
-	return friend;
+ */
+function DisplayFriendList() {
+	$(document).ready(function () {
+		$('body').append(
+			"<div id='FriendList' class='FriendList'>" +
+			"</div>");
+	});
+	$(document).ready(function () {
+		for (var i = 0; i < usersFriends.length; ++i) {
+			$('#FriendList').append(
+				"<p id='paragraph" + i + "'onclick='opposingPlayerID = usersFriends[" + i + "].id'>" + usersFriends[i].displayName + "</p>")
+		}
+	});
 }
