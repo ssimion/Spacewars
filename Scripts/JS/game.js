@@ -144,7 +144,7 @@ Game.prototype.SetGameData = function(data) {
  * @public
  */
 Game.prototype.GetOpposingPlayerBoard = function(){
-	if (this.previousPlayerMoveString == "" && previousPlayerMoveJSONformat && previousPlayerMoveJSONformat.cards)
+	if (this.previousPlayerMoveString != "" && previousPlayerMoveJSONformat && previousPlayerMoveJSONformat.cards)
 	{
 		var previousPlayerMoveJSONformat = JSON.parse(this.previousPlayerMoveString);
 		currentGame.activePlayer.SetHealth(previousPlayerMoveJSONformat.health);
