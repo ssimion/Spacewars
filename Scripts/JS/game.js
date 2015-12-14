@@ -76,16 +76,18 @@ Game.prototype.GetOpposingPlayerBoard = function(){
 	var opPlayerCard;
 	
 	// check whether this is a unitCard
-	var isUnitCard = previousPlayerMoveJSONformat[i].hasOwnProperty("health") ? true : false;
-	
-	if(isUnitCard){
-		opPlayerCard = new UnitCard();
-	} else {
-		opPlayerCard = new TrapCard();
-	}
+	var isUnitCard = false; 
 	
 	for(var i = 0; i < previousPlayerMoveJSONformat.length; i++)
 	{
+		isUnitcard = previousPlayerMoveJSONformat[i].hasOwnProperty("health") ? true : false;
+		
+		if(isUnitCard){
+			opPlayerCard = new UnitCard();
+		} else {
+			opPlayerCard = new TrapCard();
+		}
+	
 		opPlayerCard.nameOfCard = previousPlayerMoveJSONformat[i].nameOfCard;
 		opPlayerCard.descriptionOfCard = previousPlayerMoveJSONformat[i].descriptionOfCard;
 		opPlayerCard.uniqueID = previousPlayerMoveJSONformat[i].uniqueID;
