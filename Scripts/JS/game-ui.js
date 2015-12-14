@@ -272,11 +272,12 @@ function DisplayFriendList() {
 		$('body').append(
 			"<div id='FriendList' class='FriendList'>" +
 			"</div>");
+		$("#FriendList").show();	
 	});
 	$(document).ready(function () {
 		for (var i = 0; i < usersFriends.length; ++i) {
 			$('#FriendList').append(
-				"<p id='paragraph" + i + "'onclick='opposingPlayerID = usersFriends[" + i + "].id'>" + usersFriends[i].displayName + "</p>")
+				"<p id='paragraph" + i + "'onclick='opposingPlayerID = usersFriends[" + i + "].id;$('#FriendList').hide'>" + usersFriends[i].displayName + "</p>")
 		}
 	});
 }
