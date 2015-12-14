@@ -266,6 +266,12 @@ function IsDropValid(object){
 }
 
 /**
+*/
+function SetOpposingPlayer(friendId){
+	opposingPlayerID = usersFriends[friendId].id;
+}
+
+/**
  */
 function DisplayFriendList() {
 	$(document).ready(function () {
@@ -277,7 +283,7 @@ function DisplayFriendList() {
 	$(document).ready(function () {
 		for (var i = 0; i < usersFriends.length; ++i) {
 			$('#FriendList').append(
-				"<p id='paragraph" + i + "' onclick='opposingPlayerID = usersFriends[" + i + "].id'>" + usersFriends[i].displayName + "</p>")
+				"<p id='paragraph" + i + "' onclick='SetOpposingPlayer("+i+")'>" + usersFriends[i].displayName + "</p>")
 		}
 	});
 }
