@@ -71,7 +71,7 @@ Game.prototype.SetGameData = function(data) {
 }
 
 Game.prototype.CreateOpposingPlayerBoard = function(){
-	var previousPlayerMoveJSONformat = JSON.parse(previousPlayerMoveString);
+	var previousPlayerMoveJSONformat = JSON.parse(this.previousPlayerMoveString);
 }
 
 /** This function returns the active player.
