@@ -216,9 +216,9 @@ function Update(){
 	if(currentGame.PlayerDataChanged())
 		DrawPlayerData();
 	
-	setTimeout(getMatchData, 5000);
+	//setTimeout(getMatchData, 5000);
 	
-	if (userMatchStatus == "USER_AWAITING_TURN" && matchDataReceived){
+	if ((userMatchStatus == "USER_AWAITING_TURN" || userMatchStatus == "working") && matchDataReceived){
 		getMatchData(); 
 	}
 	// CallBack
