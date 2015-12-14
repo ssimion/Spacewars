@@ -6,7 +6,9 @@ body
 	margin:0;
 	padding:0;
 }
-
+#FriendList{
+	color:black;	
+}
 canvas
 {
 	margin: 0 auto;

@@ -264,3 +264,23 @@ function IsDropValid(object){
 
 	return !object;	
 }
+
+/**
+*/
+DisplayFriendList();
+function DisplayFriendList(){
+	var friend = "";
+		$(document).ready(function () {
+	$('body').append(
+	"<div id='FriendList' class='FriendList'>" +
+	"</div>");
+		});
+		$(document).ready(function () {
+			for(var i = 0; i <  userFriend.lenght;++i){
+				$('#FriendList').append(			
+				"<p id='paragraph"+i+"'onclick='opposingPlayerID = userFriend["+i+"].id'>" + userFriend[i].displayName + "</p>")
+			}
+		});	
+		
+	return friend;
+}
