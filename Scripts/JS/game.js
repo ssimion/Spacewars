@@ -74,17 +74,29 @@ Game.prototype.DrawEnemySlots = function(){
 	$(document).ready(function () {
 		$("#EnemyCards").empty();
 	});
-	for (var i = 0; i < this.GetOpposingPlayerBoard().length;++i){
-		DrawCardInHand( this.GetOpposingPlayerBoard()[i],i,"#EnemyCards",false);
-	}
-	for (var i = 0; i < 3 - this.GetOpposingPlayerBoard().length;++i){
-		$(document).ready(function () {
-			$("#EnemyCards").append(
-				"<div id='EnemySlot3' class='ui-widget-header'>" +
-				"	<p>&nbsp;</p>" +
-				"</div>" 
-			);
-		});
+	if (this.GetOpposingPlayerBoard() != null){
+		for (var i = 0; i < this.GetOpposingPlayerBoard().length;++i){
+			DrawCardInHand( this.GetOpposingPlayerBoard()[i],i,"#EnemyCards",false);
+		}		
+		for (var i = 0; i < 3 - this.GetOpposingPlayerBoard().length;++i){
+			$(document).ready(function () {
+				$("#EnemyCards").append(
+					"<div id='EnemySlot3' class='ui-widget-header'>" +
+					"	<p>&nbsp;</p>" +
+					"</div>" 
+				);
+			});
+		}
+	}else{
+		for (var i = 0; i < 3;++i){
+			$(document).ready(function () {
+				$("#EnemyCards").append(
+					"<div id='EnemySlot3' class='ui-widget-header'>" +
+					"	<p>&nbsp;</p>" +
+					"</div>" 
+				);
+			});
+		}
 	}
 }	
 /** This function returns the active player's action
@@ -121,39 +133,45 @@ Game.prototype.SetGameData = function(data) {
  * @public
  */
 Game.prototype.GetOpposingPlayerBoard = function(){
-	var previousPlayerMoveJSONformat = JSON.parse(this.previousPlayerMoveString);
-	var opposingPlayerBoard = [];
-	var opPlayerCard;
-	
-	// check whether this is a unitCard
-	var isUnitCard = false; 
-	
-	for(var i = 0; i < previousPlayerMoveJSONformat.length; i++)
-	{
-		isUnitCard = previousPlayerMoveJSONformat[i].hasOwnProperty("health") ? true : false;
-		
-		if(isUnitCard){
-			opPlayerCard = new UnitCard();
-		} else {
-			opPlayerCard = new TrapCard();
-		}
-	
-		opPlayerCard.nameOfCard = previousPlayerMoveJSONformat[i].nameOfCard;
-		opPlayerCard.descriptionOfCard = previousPlayerMoveJSONformat[i].descriptionOfCard;
-		opPlayerCard.uniqueID = previousPlayerMoveJSONformat[i].uniqueID;
+	if (this.previousPlayerMoveString == ""){
+		return;
+	}else{
+		var previousPlayerMoveJSONformat = JSON.parse(this.previousPlayerMoveString);
+		var opposingPlayerBoard = [];
+		var opPlayerCard;
 
-		if(isUnitCard) {
-			opPlayerCard.health = previousPlayerMoveJSONformat[i].health;
-			opPlayerCard.attack = previousPlayerMoveJSONformat[i].attack;
-		} else {
-			opPlayerCard.type = previousPlayerMoveJSONformat[i].type;
-			opPlayerCard.effect = previousPlayerMoveJSONformat[i].effect;
+
+		
+		// check whether this is a unitCard
+		var isUnitCard = false; 
+		
+		for(var i = 0; i < previousPlayerMoveJSONformat.length; i++)
+		{
+			isUnitCard = previousPlayerMoveJSONformat[i].hasOwnProperty("health") ? true : false;
+			
+			if(isUnitCard){
+				opPlayerCard = new UnitCard();
+			} else {
+				opPlayerCard = new TrapCard();
+			}
+		
+			opPlayerCard.nameOfCard = previousPlayerMoveJSONformat[i].nameOfCard;
+			opPlayerCard.descriptionOfCard = previousPlayerMoveJSONformat[i].descriptionOfCard;
+			opPlayerCard.uniqueID = previousPlayerMoveJSONformat[i].uniqueID;
+
+			if(isUnitCard) {
+				opPlayerCard.health = previousPlayerMoveJSONformat[i].health;
+				opPlayerCard.attack = previousPlayerMoveJSONformat[i].attack;
+			} else {
+				opPlayerCard.type = previousPlayerMoveJSONformat[i].type;
+				opPlayerCard.effect = previousPlayerMoveJSONformat[i].effect;
+			}
+			
+			opposingPlayerBoard.push(opPlayerCard);
 		}
 		
-		opposingPlayerBoard.push(opPlayerCard);
+		return opposingPlayerBoard;
 	}
-	
-	return opposingPlayerBoard;
 }
 /** This function returns the active player.
  * @memberOf Game
