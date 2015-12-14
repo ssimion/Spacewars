@@ -271,7 +271,7 @@ function SetOpposingPlayer(friendId){
 	opposingPlayerID = usersFriends[friendId].id;
 	currentGame.ChoosedAnOpponent(true);
 	createTurnBasedMatch();
-
+	$("#FriendList").hide();
 }
 
 /**

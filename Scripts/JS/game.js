@@ -17,7 +17,8 @@ function Game() {
 	this.activePlayer = this.PlayerArray[0];
 	this.activePlayerMove = new Move();
 	// hardcoding for testing purposes
-	this.previousPlayerMoveString = "";
+    this.previousPlayerMoveString = '[{"nameOfCard":"Spaceship","descriptionOfCard":"A little Spaceship","uniqueID":620911287609,"health":4,"attack":4},{"nameOfCard":"Spaceship","descriptionOfCard":"A little Spaceship","uniqueID":460978094023,"health":6,"attack":6}]';
+
 }
 /** Init function
  * @memberOf Game
