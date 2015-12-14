@@ -3,7 +3,7 @@
  * and sends the turn data.
  */
 function onCreateMatchClicked(){
-	opposingPlayerID = usersFriends[7].id;
+	opposingPlayerID = usersFriends[5].id;
 	console.log(usersFriends);
 	createTurnBasedMatch();
 }	
