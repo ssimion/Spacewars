@@ -114,6 +114,7 @@ function finishTurn(dataToSend) {
 		console.log("a turn was taken");
 		userMatchStatus = "USER_AWAITING_TURN";
 		console.log(takeTurnResponse);
+		currentGame.turnNumber = takeTurnResponse.matchVersion;
 	});
 }
 /** Quit a match via ID

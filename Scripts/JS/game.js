@@ -53,11 +53,15 @@ Game.prototype.ChoosedAnOpponent = function(value) {
  * @public
  */
 Game.prototype.NextTurn = function () {
-	this.turnNumber++;
+	if (this.turnNumber % 2 == 0)
+	{
+		this.activePlayer.moves = 1;
+	}
 	this.activePlayerMove.SetEnemyHealth(this.GetInactivePlayer().GetHealth());
 	this.activePlayerMove.SetBoardCards(this.activePlayer.GetCardsOnBoard());
 	this.DrawEnemySlots();
 	console.log(this.activePlayerMove);
+	
 }
 /** This function returns what happened during the turn
  * @memberOf Game
