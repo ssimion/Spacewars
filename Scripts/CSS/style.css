@@ -6,7 +6,9 @@ body
 	margin:0;
 	padding:0;
 }
-
+#FriendList{
+	color:black;	
+}
 canvas
 {
 	margin: 0 auto;
@@ -113,11 +115,6 @@ canvas
 {
 	position:relative;
 }
-
-img{
-	width:80%;
-}
-
 .TrapCard,.UnitCard{ 
 	width: 79px; 
 	height: 120px;

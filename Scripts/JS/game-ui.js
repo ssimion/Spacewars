@@ -264,3 +264,29 @@ function IsDropValid(object){
 
 	return !object;	
 }
+
+/**
+*/
+function SetOpposingPlayer(friendId){
+	opposingPlayerID = usersFriends[friendId].id;
+	currentGame.ChoosedAnOpponent(true);
+	createTurnBasedMatch();
+	$("#FriendList").hide();
+}
+
+/**
+ */
+function DisplayFriendList() {
+	$(document).ready(function () {
+		$('body').append(
+			"<div id='FriendList' class='FriendList'>" +
+			"</div>");
+		$("#FriendList").show();	
+	});
+	$(document).ready(function () {
+		for (var i = 0; i < usersFriends.length; ++i) {
+			$('#FriendList').append(
+				"<p id='paragraph" + i + "' onclick='SetOpposingPlayer("+i+")'>" + usersFriends[i].displayName + "</p>")
+		}
+	});
+}
