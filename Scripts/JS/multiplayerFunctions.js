@@ -85,11 +85,14 @@ function getMatchData() {
 		if (matchDataResponse.userMatchStatus == "USER_TURN") {
 			userMatchStatus = "USER_TURN";
 			console.log("User took a turn");
+			if(matchVersion != matchDataResponse.matchVersion)
+			{
+				matchDataReceived = true;
+			}
 			matchVersion = matchDataResponse.matchVersion;
 			currentGame.SetGameData(atob(matchDataResponse.data.data));
 			currentGame.DrawEnemySlots();
 		}
-		matchDataReceived = true;
 	});
 }
 /** This function is called at each end of turn.
