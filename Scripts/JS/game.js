@@ -144,9 +144,8 @@ Game.prototype.SetGameData = function(data) {
  * @public
  */
 Game.prototype.GetOpposingPlayerBoard = function(){
-	if (this.previousPlayerMoveString == "" || previousPlayerMoveJSONformat || previousPlayerMoveJSONformat.cards){
-		return;
-	}else{
+	if (this.previousPlayerMoveString == "" && previousPlayerMoveJSONformat && previousPlayerMoveJSONformat.cards)
+	{
 		var previousPlayerMoveJSONformat = JSON.parse(this.previousPlayerMoveString);
 		currentGame.activePlayer.SetHealth(previousPlayerMoveJSONformat.health);
 		var opposingPlayerBoard = [];
@@ -181,6 +180,8 @@ Game.prototype.GetOpposingPlayerBoard = function(){
 		}
 		
 		return opposingPlayerBoard;
+	} else {
+		return;
 	}
 }
 /** This function returns the active player.
