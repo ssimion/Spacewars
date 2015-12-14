@@ -115,7 +115,7 @@ function Update(){
 	if (userMatchStatus == "USER_AWAITING_TURN" && matchDataReceived){
 		getMatchData(); 
 	}
-	this.CreateOpposingPlayerBoard();
+	currentGame.CreateOpposingPlayerBoard();
 	// CallBack
 	requestAnimationFrame(Update);
 }
