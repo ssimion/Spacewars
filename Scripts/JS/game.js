@@ -108,7 +108,7 @@ Game.prototype.DrawEnemySlots = function(){
  * @public
  */
 Game.prototype.GetActivePlayerMoveString = function() {
-	var healthString = "health:" + currentGame.GetInactivePlayer().GetHealth() + ", cards:";
+	var healthString = "{health:" + currentGame.GetInactivePlayer().GetHealth() + ", cards:";
 	var activePlayerMoveString = healthString + "[";
 	for(var i = 0; i < this.activePlayer.GetCardsOnBoard().length; i++)
 	{
@@ -121,7 +121,7 @@ Game.prototype.GetActivePlayerMoveString = function() {
 		}
 		else
 		{
-			activePlayerMoveString += "]";
+			activePlayerMoveString += "]}";
 		}
 	}
 	return activePlayerMoveString;
