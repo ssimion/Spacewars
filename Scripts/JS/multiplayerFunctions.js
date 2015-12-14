@@ -73,7 +73,7 @@ function joinTurnBasedMatch(id) {
  */
 function getMatchData() {
 	console.log("Getting the match data");
-	userMatchStatus = "working";
+	//userMatchStatus = "working";
 	matchDataReceived = false;
 	var httpRequest = gapi.client.games.turnBasedMatches.get({
 			"matchId" : matchID,
