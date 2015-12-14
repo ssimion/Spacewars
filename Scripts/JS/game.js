@@ -78,7 +78,7 @@ Game.prototype.DrawEnemySlots = function(){
 	$(document).ready(function () {
 		$("#EnemyCards").empty();
 	});
-	if (this.GetOpposingPlayerBoard() != null && this.GetOpposingPlayerBoard().length > 0){
+	if (this.GetOpposingPlayerBoard() != null){
 		for (var i = 0; i < this.GetOpposingPlayerBoard().length;++i){
 			DrawCardInHand( this.GetOpposingPlayerBoard()[i],i,"#EnemyCards",false);
 		}		
@@ -108,29 +108,23 @@ Game.prototype.DrawEnemySlots = function(){
  * @public
  */
 Game.prototype.GetActivePlayerMoveString = function() {
-	var activePlayerMoveString = "";
-	var healthString = "{\"health\":" + currentGame.GetInactivePlayer().GetHealth();
-	if(this.activePlayer.GetCardsOnBoard().length > 0)
+	var healthString = "{\"health\":" + currentGame.GetInactivePlayer().GetHealth() + ", \"cards\":";
+	var activePlayerMoveString = healthString + "[";
+	for(var i = 0; i < this.activePlayer.GetCardsOnBoard().length; i++)
 	{
-		activePlayerMoveString = ", \"cards\":" + "[";
-		for(var i = 0; i < this.activePlayer.GetCardsOnBoard().length; i++)
+		var jsonFormatObj = JSON.stringify(this.activePlayer.GetCardsOnBoard()[i].GetJSONObject());
+		
+		activePlayerMoveString += jsonFormatObj;
+		if(i != this.activePlayer.GetCardsOnBoard().length - 1)
 		{
-			var jsonFormatObj = JSON.stringify(this.activePlayer.GetCardsOnBoard()[i].GetJSONObject());
-			
-			activePlayerMoveString += jsonFormatObj;
-			if(i != this.activePlayer.GetCardsOnBoard().length - 1)
-			{
-				activePlayerMoveString += ",";
-			}
-			else
-			{
-				activePlayerMoveString += "]}";
-			}
+			activePlayerMoveString += ",";
 		}
-	} else {
-	healthString += "}";
+		else
+		{
+			activePlayerMoveString += "]}";
+		}
 	}
-	return healthString + activePlayerMoveString;
+	return activePlayerMoveString;
 }
 /** This function sets the game data
  * @memberOf Game
@@ -144,13 +138,16 @@ Game.prototype.SetGameData = function(data) {
  * @public
  */
 Game.prototype.GetOpposingPlayerBoard = function(){
-	if (this.previousPlayerMoveString != "" && previousPlayerMoveJSONformat && previousPlayerMoveJSONformat.cards)
-	{
+	if (this.previousPlayerMoveString == ""){
+		return;
+	}else{
 		var previousPlayerMoveJSONformat = JSON.parse(this.previousPlayerMoveString);
 		currentGame.activePlayer.SetHealth(previousPlayerMoveJSONformat.health);
 		var opposingPlayerBoard = [];
 		var opPlayerCard;
 
+
+		
 		// check whether this is a unitCard
 		var isUnitCard = false; 
 		
@@ -180,8 +177,6 @@ Game.prototype.GetOpposingPlayerBoard = function(){
 		}
 		
 		return opposingPlayerBoard;
-	} else {
-		return;
 	}
 }
 /** This function returns the active player.
