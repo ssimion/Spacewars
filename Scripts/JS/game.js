@@ -78,7 +78,7 @@ Game.prototype.DrawEnemySlots = function(){
 	$(document).ready(function () {
 		$("#EnemyCards").empty();
 	});
-	if (this.GetOpposingPlayerBoard().length > 0){
+	if (this.GetOpposingPlayerBoard().length != null && this.GetOpposingPlayerBoard().length > 0){
 		for (var i = 0; i < this.GetOpposingPlayerBoard().length;++i){
 			DrawCardInHand( this.GetOpposingPlayerBoard()[i],i,"#EnemyCards",false);
 		}		
