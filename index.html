@@ -35,6 +35,7 @@
 	<body>
 		<div id="loginDiv" style="display: none;">Welcome! <a href="javascript:login.showLoginDialog()"><img src="./img/gplus_signin_normal.png"></a></div>
 		<div id="leaderboards" style="display: none;">
+		<center>
 		<table id="leaderboardsTable">
 			<thead>
 				<tr>
@@ -46,7 +47,7 @@
 			<tbody>
 			</tbody>
 		</table>
-		<input type="button" id="leaderboardsBack" value="Go back" onclick="leaderboardsTable.goBack()"/>
+		<input type="button" class="flat" id="leaderboardsBack" value="Go back" onclick="leaderboardsTable.goBack()"/>
 		</div>
 		<div id="leaderboard" style="display: none;">
 			<div id="leaderboardTitle"></div>
@@ -61,8 +62,9 @@
 				<tbody>
 				</tbody>
 			</table>
-			<input type="button" id="leaderboardBack" value="Go back" onclick="leaderboardTable.goBack()"/>
+			<input type="button" class="flat" id="leaderboardBack" value="Go back" onclick="leaderboardTable.goBack()"/>
 		</div>
+		</center>
 		<canvas id="AnimatedBackground" >
 		</canvas>
 			<table id="board">

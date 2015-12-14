@@ -32,7 +32,7 @@ canvas
 
 #leaderboardTable tr { border-bottom: 2px #00008b solid; }
 #leaderboardsTable tr { border-bottom: 2px #00008b solid; }
-#leaderboardTable td { vertical-align: top; padding: 10px; }
+#leaderboardTable td {  padding: 10px; }
 #leaderboardsTable td { vertical-align: top; padding: 10px; }
 
 #TopHealth{
