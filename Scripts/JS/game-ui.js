@@ -270,7 +270,8 @@ function IsDropValid(object){
 function SetOpposingPlayer(friendId){
 	opposingPlayerID = usersFriends[friendId].id;
 	currentGame.ChoosedAnOpponent(true);
-	createTurnBasedMatch();	
+	createTurnBasedMatch();
+	$("#FriendList").hide();
 }
 
 /**
