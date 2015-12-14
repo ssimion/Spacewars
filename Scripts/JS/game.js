@@ -15,7 +15,7 @@ function Game() {
 	this.turnNumber = 0;
 	this.activePlayer = this.PlayerArray[0];
 	this.activePlayerMove = new Move();
-	// hardcoding fop testing purposes
+	// hardcoding for testing purposes
 	this.previousPlayerMoveString = '[{"nameOfCard":"Spaceship","descriptionOfCard":"A little Spaceship","uniqueID":620911287609,"health":4,"attack":4},{"nameOfCard":"Spaceship","descriptionOfCard":"A little Spaceship","uniqueID":460978094023,"health":6,"attack":6}]';
 }
 /** Init function
@@ -73,7 +73,7 @@ Game.prototype.SetGameData = function(data) {
 Game.prototype.CreateOpposingPlayerBoard = function(){
 	var previousPlayerMoveJSONformat = JSON.parse(previousPlayerMoveString);
 }
-CreateOpposingPlayerBoard();
+
 /** This function returns the active player.
  * @memberOf Game
  * @public
@@ -115,6 +115,7 @@ function Update(){
 	if (userMatchStatus == "USER_AWAITING_TURN" && matchDataReceived){
 		getMatchData(); 
 	}
+	this.CreateOpposingPlayerBoard();
 	// CallBack
 	requestAnimationFrame(Update);
 }
