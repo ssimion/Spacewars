@@ -290,3 +290,24 @@ function DisplayFriendList() {
 		}
 	});
 }
+
+function DisplayWinLose() {
+	$(document).ready(function () {
+		$('body').append(
+			"<div id='WinLose' class='FriendList'>" +
+			"</div>");
+		$("#WinLose").show();	
+	});
+	$(document).ready(function () {
+		var winString = "You won!";
+		var loseString = "You lost :(";
+		if(currentGame.GetActivePlayer().GetHealth() <= 0) {
+			$('#WinLose').append(
+				"<p id='winlose'>" + loseString + "</p>")
+		} else if (currentGame.GetInactivePlayer().GetHealth() <= 0) {
+			$('#WinLose').append(
+				"<p id='winlose'>" + winString + "</p>")
+		}
+	}
+	});
+}

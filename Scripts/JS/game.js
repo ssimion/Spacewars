@@ -223,7 +223,7 @@ function Update(){
 		DrawPlayerData();
 	
 	//setTimeout(getMatchData, 5000);
-	
+	DisplayWinLose();
 	if ((userMatchStatus == "USER_AWAITING_TURN" /*|| userMatchStatus == "working")*/) && matchDataReceived){
 		getMatchData(); 
 	}
