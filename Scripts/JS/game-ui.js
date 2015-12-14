@@ -308,6 +308,5 @@ function DisplayWinLose() {
 			$('#WinLose').append(
 				"<p id='winlose'>" + winString + "</p>")
 		}
-	}
 	});
 }
