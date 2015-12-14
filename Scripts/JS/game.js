@@ -80,7 +80,7 @@ Game.prototype.GetOpposingPlayerBoard = function(){
 	
 	for(var i = 0; i < previousPlayerMoveJSONformat.length; i++)
 	{
-		isUnitcard = previousPlayerMoveJSONformat[i].hasOwnProperty("health") ? true : false;
+		isUnitCard = previousPlayerMoveJSONformat[i].hasOwnProperty("health") ? true : false;
 		
 		if(isUnitCard){
 			opPlayerCard = new UnitCard();
