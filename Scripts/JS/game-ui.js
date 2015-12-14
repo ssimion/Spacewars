@@ -277,7 +277,7 @@ function DisplayFriendList() {
 	$(document).ready(function () {
 		for (var i = 0; i < usersFriends.length; ++i) {
 			$('#FriendList').append(
-				"<p id='paragraph" + i + "' onclick='opposingPlayerID = usersFriends[" + i + "].id'; alert('usersFriends[" + i + "].id');>" + usersFriends[i].displayName + "</p>")
+				"<p id='paragraph" + i + "' onclick='opposingPlayerID = usersFriends[" + i + "].id'>" + usersFriends[i].displayName + "</p>")
 		}
 	});
 }

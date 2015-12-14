@@ -5,6 +5,7 @@
 function onCreateMatchClicked(){
 
 	DisplayFriendList();
+	alert(opposingPlayerID);
 	console.log(usersFriends);
 	createTurnBasedMatch();
 }	
