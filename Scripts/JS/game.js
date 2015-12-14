@@ -142,6 +142,7 @@ Game.prototype.GetOpposingPlayerBoard = function(){
 		return;
 	}else{
 		var previousPlayerMoveJSONformat = JSON.parse(this.previousPlayerMoveString);
+		currentGame.activePlayer.SetHealth(previousPlayerMoveJSONformat.health);
 		var opposingPlayerBoard = [];
 		var opPlayerCard;
 
