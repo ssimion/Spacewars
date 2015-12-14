@@ -66,7 +66,7 @@ Game.prototype.GetActivePlayerMoveString = function() {
 }
 
 Game.prototype.SetGameData = function(data) {
-	this.previousPlayerMove = data;
+	this.previousPlayerMoveString = data;
 }
 /** This function returns the active player.
  * @memberOf Game
