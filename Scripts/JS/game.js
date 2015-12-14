@@ -108,20 +108,24 @@ Game.prototype.DrawEnemySlots = function(){
  * @public
  */
 Game.prototype.GetActivePlayerMoveString = function() {
-	var healthString = "{\"health\":" + currentGame.GetInactivePlayer().GetHealth() + ", \"cards\":";
-	var activePlayerMoveString = healthString + "[";
-	for(var i = 0; i < this.activePlayer.GetCardsOnBoard().length; i++)
+	var activePlayerMoveString = "";
+	if(this.activePlayer.GetCardsOnBoard().length > 0)
 	{
-		var jsonFormatObj = JSON.stringify(this.activePlayer.GetCardsOnBoard()[i].GetJSONObject());
-		
-		activePlayerMoveString += jsonFormatObj;
-		if(i != this.activePlayer.GetCardsOnBoard().length - 1)
+		var healthString = "{\"health\":" + currentGame.GetInactivePlayer().GetHealth() + ", \"cards\":";
+		activePlayerMoveString = healthString + "[";
+		for(var i = 0; i < this.activePlayer.GetCardsOnBoard().length; i++)
 		{
-			activePlayerMoveString += ",";
-		}
-		else
-		{
-			activePlayerMoveString += "]}";
+			var jsonFormatObj = JSON.stringify(this.activePlayer.GetCardsOnBoard()[i].GetJSONObject());
+			
+			activePlayerMoveString += jsonFormatObj;
+			if(i != this.activePlayer.GetCardsOnBoard().length - 1)
+			{
+				activePlayerMoveString += ",";
+			}
+			else
+			{
+				activePlayerMoveString += "]}";
+			}
 		}
 	}
 	return activePlayerMoveString;
