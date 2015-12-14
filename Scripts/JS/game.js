@@ -29,7 +29,7 @@ Game.prototype.Init =  function (){
 			this.PlayerArray[j].DrawCardFromDeck();
 	}
 	for (var i = 0; i < this.activePlayer.GetNumberOfCardsInHand();++i){
-		DrawCardInHand(this.activePlayer.GetCardsInHand()[i],i);
+		DrawCardInHand(this.activePlayer.GetCardsInHand()[i],i,"#HandCards",true);
 	}
 }
 /** This function switch between the players.
@@ -40,13 +40,41 @@ Game.prototype.NextTurn = function () {
 	this.turnNumber++;
 	this.activePlayerMove.SetEnemyHealth(this.GetInactivePlayer().GetHealth());
 	this.activePlayerMove.SetBoardCards(this.activePlayer.GetCardsOnBoard());
+	this.DrawEnemySlots();
 	console.log(this.activePlayerMove);
 }
-
+/** This function returns what happened during the turn
+ * @memberOf Game
+ * @public
+ */
 Game.prototype.GetActivePlayerMove = function() {
 	return this.activePlayerMove;
 }
-
+/** This function draws the enemy cards
+ * @memberOf Game
+ * @public
+ */
+Game.prototype.DrawEnemySlots = function(){	
+	$(document).ready(function () {
+		$("#EnemyCards").empty();
+	});
+	for (var i = 0; i < this.GetOpposingPlayerBoard().length;++i){
+		DrawCardInHand( this.GetOpposingPlayerBoard()[i],i,"#EnemyCards",false);
+	}
+	for (var i = 0; i < 3 - this.GetOpposingPlayerBoard().length;++i){
+		$(document).ready(function () {
+			$("#EnemyCards").append(
+				"<div id='EnemySlot3' class='ui-widget-header'>" +
+				"	<p>&nbsp;</p>" +
+				"</div>" 
+			);
+		});
+	}
+}	
+/** This function returns the active player's action
+ * @memberOf Game
+ * @public
+ */
 Game.prototype.GetActivePlayerMoveString = function() {
 	var activePlayerMoveString = "[";
 	for(var i = 0; i < this.activePlayer.GetCardsOnBoard().length; i++)
@@ -65,11 +93,17 @@ Game.prototype.GetActivePlayerMoveString = function() {
 	}
 	return activePlayerMoveString;
 }
-
+/** This function sets the game data
+ * @memberOf Game
+ * @public
+ */
 Game.prototype.SetGameData = function(data) {
 	this.previousPlayerMoveString = data;
 }
-
+/** This function creates a Card Array that contains the enemy cards 
+ * @memberOf Game
+ * @public
+ */
 Game.prototype.GetOpposingPlayerBoard = function(){
 	var previousPlayerMoveJSONformat = JSON.parse(this.previousPlayerMoveString);
 	var opposingPlayerBoard = [];
@@ -105,7 +139,6 @@ Game.prototype.GetOpposingPlayerBoard = function(){
 	
 	return opposingPlayerBoard;
 }
-
 /** This function returns the active player.
  * @memberOf Game
  * @public
@@ -129,6 +162,10 @@ Game.prototype.GetInactivePlayer = function(){
 Game.prototype.GetCurrentTurn = function () {
 	return this.turnNumber;
 }
+/** This function stores the old data to prevent useless refresh.
+ * @memberOf Game
+ * @public
+ */
 Game.prototype.PlayerDataChanged = function (){
 
 	if(!g_oldPlayerData)
@@ -151,8 +188,6 @@ function Update(){
 	// CallBack
 	requestAnimationFrame(Update);
 }
-
-
 
 var currentGame = new Game();
 currentGame.Init();

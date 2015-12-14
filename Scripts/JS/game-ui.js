@@ -184,11 +184,13 @@ $(document).ready(function () {
 /** Draw card in hand
  * @param {object} Card
  * @param {int} id for the css.
+ * @param {string} Cardlocation : the id of the place you want to put your card
+ * @param {bool} draggable : should the card be draggable
  */
-function DrawCardInHand(Card, i) {
+function DrawCardInHand(Card, i,Cardlocation,draggable) {
 	$(document).ready(function () {
 		if (Card.toString() === '[UnitCard "' + Card.health + '"]') {
-			$("body").append(
+			$(Cardlocation).append(
 				"<div id='UnitCard" + i + "' class='ui-widget-content UnitCard'>" +
 				"<p>" + Card.GetNameOfCard() + "(" + Card.GetCardCost() + ")</p>" +
 				"<p><center><img src='http://digital-art-gallery.com/oid/93/640x360_16237_The_ship_2d_sci_fi_concept_art_spaceship_picture_image_digital_art.jpg' alt='Smiley face' height='42' width='42'></center></p>" +
@@ -196,28 +198,32 @@ function DrawCardInHand(Card, i) {
 				"<p>" + Card.GetHealth() + "/" + Card.GetAttack() + "</p>" +
 				"<p style='display:none;'>" + Card.GetID() + "</p>" +
 				"</div>");
-			$("#UnitCard" + i).draggable({
-				snap : ".squaredotted",
-				snapMode : "inner",
-				containment : "parent",
-				revert : function (valid) {
-					return IsDropValid(valid);
-				}
-			});
+			if (draggable){
+				$("#UnitCard" + i).draggable({
+					snap : ".squaredotted",
+					snapMode : "inner",
+					revert : function (valid) {
+						return IsDropValid(valid);
+					}
+				});				
+			}
 		} else {
-			$("body").append(
+			$(Cardlocation).append(
 				"<div id='TrapCard" + i + "' class='ui-widget-content TrapCard'>" +
 				"<p>" + Card.GetNameOfCard() + "(" + Card.GetCardCost() + ")</p>" +
 				"<p>&nbsp;</p>" +
 				"<p>" + Card.GetCardDescription() + "</p>" +
 				"<p style='display:none;'>" + Card.GetID() + "</p>" +
 				"</div>");
-			$("#TrapCard" + i).draggable({
-				containment : "parent",
-				revert : function (valid) {
-					return IsDropValid(valid);
-				}
-			});
+			if (draggable){
+				$("#TrapCard" + i).draggable({
+					snap : ".squaredotted",
+					snapMode : "inner",
+					revert : function (valid) {
+						return IsDropValid(valid);
+					}
+				});
+			}
 		}
 	});
 }
