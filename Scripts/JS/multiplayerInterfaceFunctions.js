@@ -3,11 +3,8 @@
  * and sends the turn data.
  */
 function onCreateMatchClicked(){
-
 	DisplayFriendList();
-	alert(opposingPlayerID);
 	console.log(usersFriends);
-	createTurnBasedMatch();
 }	
 /** Handle the event when pressing the "Join Match" button
  * and sends the turn data.

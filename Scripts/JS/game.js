@@ -13,6 +13,7 @@ var g_oldPlayerData = {};
 function Game() {
 	this.PlayerArray = [new Player("Player1"),new Player("Player2")]
 	this.turnNumber = 0;
+	this.hasChosenAnOpponent = false;
 	this.activePlayer = this.PlayerArray[0];
 	this.activePlayerMove = new Move();
 	// hardcoding for testing purposes
@@ -31,6 +32,20 @@ Game.prototype.Init =  function (){
 	for (var i = 0; i < this.activePlayer.GetNumberOfCardsInHand();++i){
 		DrawCardInHand(this.activePlayer.GetCardsInHand()[i],i,"#HandCards",true);
 	}
+}
+/** Return true if the player has chosen an opponent.
+ * @memberOf Game
+ * @public
+ */
+Game.prototype.HasChosenAnOpponent = function() {
+	return this.hasChosenAnOpponent;
+}
+/** Return true if the player has chosen an opponent.
+ * @memberOf Game
+ * @public
+ */
+Game.prototype.ChoosedAnOpponent = function(value) {
+	this.hasChosenAnOpponent = value;
 }
 /** This function switch between the players.
  * @memberOf Game
