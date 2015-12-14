@@ -17,7 +17,7 @@ function Game() {
 	this.activePlayer = this.PlayerArray[0];
 	this.activePlayerMove = new Move();
 	// hardcoding for testing purposes
-    this.previousPlayerMoveString = '[{"nameOfCard":"Spaceship","descriptionOfCard":"A little Spaceship","uniqueID":620911287609,"health":4,"attack":4},{"nameOfCard":"Spaceship","descriptionOfCard":"A little Spaceship","uniqueID":460978094023,"health":6,"attack":6}]';
+    this.previousPlayerMoveString = '';
 
 }
 /** Init function
@@ -200,7 +200,6 @@ function Update(){
 	if (userMatchStatus == "USER_AWAITING_TURN" && matchDataReceived){
 		getMatchData(); 
 	}
-	currentGame.GetOpposingPlayerBoard();
 	// CallBack
 	requestAnimationFrame(Update);
 }
