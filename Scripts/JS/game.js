@@ -152,7 +152,7 @@ Game.prototype.GetOpposingPlayerBoard = function(){
 		
 		for(var i = 0; i < previousPlayerMoveJSONformat.length; i++)
 		{
-			isUnitCard = previousPlayerMoveJSONformat.card[i].hasOwnProperty("health") ? true : false;
+			isUnitCard = previousPlayerMoveJSONformat.cards[i].hasOwnProperty("health") ? true : false;
 			
 			if(isUnitCard){
 				opPlayerCard = new UnitCard();
@@ -160,16 +160,16 @@ Game.prototype.GetOpposingPlayerBoard = function(){
 				opPlayerCard = new TrapCard();
 			}
 		
-			opPlayerCard.nameOfCard = previousPlayerMoveJSONformat.card[i].nameOfCard;
-			opPlayerCard.descriptionOfCard = previousPlayerMoveJSONformat.card[i].descriptionOfCard;
-			opPlayerCard.uniqueID = previousPlayerMoveJSONformat.card[i].uniqueID;
+			opPlayerCard.nameOfCard = previousPlayerMoveJSONformat.cards[i].nameOfCard;
+			opPlayerCard.descriptionOfCard = previousPlayerMoveJSONformat.cards[i].descriptionOfCard;
+			opPlayerCard.uniqueID = previousPlayerMoveJSONformat.cards[i].uniqueID;
 
 			if(isUnitCard) {
-				opPlayerCard.health = previousPlayerMoveJSONformat.card[i].health;
-				opPlayerCard.attack = previousPlayerMoveJSONformat.card[i].attack;
+				opPlayerCard.health = previousPlayerMoveJSONformat.cards[i].health;
+				opPlayerCard.attack = previousPlayerMoveJSONformat.cards[i].attack;
 			} else {
-				opPlayerCard.type = previousPlayerMoveJSONformat.card[i].type;
-				opPlayerCard.effect = previousPlayerMoveJSONformat.card[i].effect;
+				opPlayerCard.type = previousPlayerMoveJSONformat.cards[i].type;
+				opPlayerCard.effect = previousPlayerMoveJSONformat.cards[i].effect;
 			}
 			
 			opposingPlayerBoard.push(opPlayerCard);
