@@ -144,7 +144,7 @@ Game.prototype.SetGameData = function(data) {
  * @public
  */
 Game.prototype.GetOpposingPlayerBoard = function(){
-	if (this.previousPlayerMoveString == ""){
+	if (this.previousPlayerMoveString == "" && previousPlayerMoveJSONformat.cards){
 		return;
 	}else{
 		var previousPlayerMoveJSONformat = JSON.parse(this.previousPlayerMoveString);
