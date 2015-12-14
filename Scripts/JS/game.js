@@ -17,7 +17,8 @@ function Game() {
 	this.activePlayer = this.PlayerArray[0];
 	this.activePlayerMove = new Move();
 	// hardcoding for testing purposes
-	this.previousPlayerMoveString = '';
+	this.previousPlayerMoveString = "";
+}
 /** Init function
  * @memberOf Game
  * @public
