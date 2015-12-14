@@ -105,8 +105,7 @@ canvas
     text-align: center;
 }
 
-#TrapCard:hover, #UnitCard:hover {
-}
+
 
 #AnimatedBackground{
 	position:absolute;
@@ -141,8 +140,13 @@ img{
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 3px;
-	border:1px #0000FF;
+	border:1px #0000FF;	
 	border-style: solid ;
+}
+
+.TrapCard:hover, .UnitCard:hover,.UnitCard:active ,.TrapCard:active  {
+	background-color : rgba(0, 0, 150, 0.8);
+	cursor: pointer;
 }
 
 .SlotHighLight{
@@ -172,7 +176,7 @@ img{
 }
 
 .flat {
-	background-color: rgba(0, 0, 200, 0.7);
+	background-color: rgba(0, 0, 150, 0.5);
 	padding: 5px 5px;
 	font-size: 14px;
 	line-height: 100%;
@@ -183,16 +187,16 @@ img{
 	text-align: center;
 	cursor: pointer;
 	font-weight: bold;
-	transition: background 0.1s ease-in-out;
-	-webkit-transition: background 0.1s ease-in-out;
-	-moz-transition: background 0.1s ease-in-out;
-	-ms-transition: background 0.1s ease-in-out;
-	-o-transition: background 0.1s ease-in-out;
 	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-	color: #FFF	;
+	display: block;
+	border: 1px solid transparent;
+	color: #ffffff;
+	font-weight: 300;
 	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
 	border-radius: 3px;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
 }
 
 .flat:active {
@@ -206,5 +210,5 @@ img{
 }
 
 .flat:hover {
-	background-color: #DDDDDD;
+	background-color: rgba(0, 0, 255, 0.7);
 }
