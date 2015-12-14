@@ -294,7 +294,7 @@ function DisplayFriendList() {
 function DisplayWinLose() {
 	$(document).ready(function () {
 		$('body').append(
-			"<div id='WinLose' class='FriendList'>" +
+			"<div id='WinLose' class='WinLose'>" +
 			"</div>");
 		$("#WinLose").show();	
 	});
@@ -307,6 +307,7 @@ function DisplayWinLose() {
 		} else if (currentGame.GetInactivePlayer().GetHealth() <= 0) {
 			$('#WinLose').append(
 				"<p id='winlose'>" + winString + "</p>")
+				leadManager.gotScore();
 		}
 	});
 }

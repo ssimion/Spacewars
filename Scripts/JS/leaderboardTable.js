@@ -20,7 +20,7 @@ leaderboardTable.goBackTo = leaderboardTable.BACK_TO_ALL_LEADERBOARDS
 	var request = gapi.client.games.scores.list({
 			collection : 'SOCIAL',
 			leaderboardId : leaderboardId,
-			timeSpan : 'WEEKLY'
+			timeSpan : 'ALL_TIME'
 		});
 	request.execute(function (response) {
 		console.log('This is your data: ', response);

@@ -6,7 +6,7 @@ body
 	margin:0;
 	padding:0;
 }
-#FriendList{
+#FriendList #WinLose{
 	color:black;	
 }
 canvas

@@ -65,7 +65,6 @@ leadManager.gotScore = function () {
 		if (response.hasOwnProperty('beatenScoreTimeSpans')) {
 			for (var i = 0; i < response.beatenScoreTimeSpans.length; i++) {
 				if (response.beatenScoreTimeSpans[i] == 'WEEKLY') {
-					console.log('Hooray! New weekly high score!');
 					newWeeklyHighScore = true;
 					leaderboardWidget.show(leaderboardId);
 				} else {}
