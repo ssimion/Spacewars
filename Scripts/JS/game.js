@@ -78,7 +78,7 @@ Game.prototype.DrawEnemySlots = function(){
 	$(document).ready(function () {
 		$("#EnemyCards").empty();
 	});
-	if (this.GetOpposingPlayerBoard() != null){
+	if (this.GetOpposingPlayerBoard().length > 0){
 		for (var i = 0; i < this.GetOpposingPlayerBoard().length;++i){
 			DrawCardInHand( this.GetOpposingPlayerBoard()[i],i,"#EnemyCards",false);
 		}		
@@ -146,8 +146,6 @@ Game.prototype.GetOpposingPlayerBoard = function(){
 		var opposingPlayerBoard = [];
 		var opPlayerCard;
 
-
-		
 		// check whether this is a unitCard
 		var isUnitCard = false; 
 		
