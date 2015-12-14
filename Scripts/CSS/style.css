@@ -116,10 +116,6 @@ canvas
 	position:relative;
 }
 
-img{
-	width:80%;
-}
-
 .TrapCard,.UnitCard{ 
 	width: 79px; 
 	height: 120px;
